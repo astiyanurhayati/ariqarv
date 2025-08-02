@@ -1,97 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<style>
-.inter{
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-</style>
-  </head>
-  <body class="font-[inter]">
-   <section class="bg-[#010101] text-white min-h-screen">
-      <!-- Navbar -->
-       <!-- Header -->
-  <header class="flex justify-between items-center px-6 md:px-16 py-6 relative z-30">
-    <h1 class="text-lg font-bold">Ariq Arvy</h1>
-
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex space-x-6 text-sm items-center">
-      <a href="#" class="hover:underline">Projects</a>
-      <a href="#" class="hover:underline">Testimonials</a>
-      <a href="#" class="hover:underline">Clients</a>
-      <a href="#" class="hover:underline">Pricing</a>
-      <a href="#" class="inline-flex items-center gap-2 text-white border border-white/20 px-5 py-2 rounded-md text-sm font-medium hover:bg-white/10 transition">
-        Get Started
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </nav>
-
-    <!-- Hamburger Button -->
-    <button id="menuToggle" class="md:hidden focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </header>
-
-  <!-- Sidebar Mobile Menu -->
-  <div id="mobileMenu" class="fixed top-0 left-0 w-64 h-full bg-zinc-900 shadow-lg transform -translate-x-full transition-transform duration-300 z-40">
-    <div class="p-6 space-y-4 text-sm">
-      <button id="closeMenu" class="text-white text-right w-full mb-4">
-        ✕ Close
-      </button>
-      <a href="#" class="block hover:underline">Projects</a>
-      <a href="#" class="block hover:underline">Testimonials</a>
-      <a href="#" class="block hover:underline">Clients</a>
-      <a href="#" class="block hover:underline">Pricing</a>
-      <a href="#" class="inline-flex items-center gap-2 text-white border border-white/20 px-5 py-2 rounded-md text-sm font-medium hover:bg-white/10 transition">
-        Get Started
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- Overlay -->
-  <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-30"></div>
-
-  <!-- Script -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const closeMenuBtn = document.getElementById('closeMenu');
-
-    function openMenu() {
-      mobileMenu.classList.remove('-translate-x-full');
-      overlay.classList.remove('hidden');
+  <style>
+    .inter {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
     }
 
-    function closeMenu() {
-      mobileMenu.classList.add('-translate-x-full');
-      overlay.classList.add('hidden');
+    @font-face {
+      font-family: "sfp_regular";
+      src: url("/font/SFPRODISPLAYBOLD.OTF");
     }
 
-    menuToggle.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-  </script>
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
 
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll-left {
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+
+      /* karena kamu duplikat 2x */
+    }
+
+    @keyframes marquee-reverse {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(50%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+
+    .animate-marquee-reverse {
+      animation: marquee-reverse 30s linear infinite;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 100%;
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from {
+        opacity: 0.2;
+        transform: scale(0.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    /* Efek glow radial */
+    .radial-glow::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 40px;
+      background: radial-gradient(ellipse at center, white 0%, transparent 70%);
+      opacity: 0.15;
+      filter: blur(10px);
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body class="inter">
+  <section class="bg-[#010101] text-white min-h-screen">
+  <header id="navbar" class="flex justify-between items-center px-6 md:px-16 py-6 relative z-30 transition-transform duration-500 transform">
+
+
+      <h1 class="text-lg font-bold">Ariq Arvy</h1>
+      <div class="flex items-center space-x-6">
+        <nav class="hidden md:flex space-x-6 text-sm items-center">
+          <a href="#" class="hover:underline">Projects</a>
+          <a href="#" class="hover:underline">Testimonials</a>
+          <a href="#" class="hover:underline">Clients</a>
+          <a href="#" class="hover:underline">Pricing</a>
+        </nav>
+        <a href="#"
+          class="inline-flex items-center gap-3 bg-neutral-900 text-white px-5 py-2 rounded-lg shadow text-sm font-medium hover:bg-neutral-800 transition">
+          <span class="relative flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-[#0055FE]"></span>
+          </span>
+          Book a quick call
+          <span class="relative z-10 text-xl">→</span>
+        </a>
+      </div>
+    </header>
+
+
+    <!-- Overlay -->
     <section class="relative bg-black overflow-hidden">
       <!-- Background Image Layer -->
       <div class="absolute inset-0 z-0">
@@ -101,489 +143,950 @@
       </div>
 
       <!-- Hero Content -->
-          <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-16 py-12 text-center text-white">
-            <!-- Badge -->
-          <div class="relative inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur text-sm mb-6 overflow-hidden">
-      
-      <!-- Garis halus biru di atas -->
-      <div class="absolute top-0 left-0 w-full h-[1px] bg-blue-500/50"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-16 py-12 text-center text-white">
+        <div
+          class="relative inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur text-sm mb-6 overflow-hidden">
+          <div
+            class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent">
+          </div>
+          <div class="flex -space-x-2">
+            <img src="img/users.png" class="" />
+          </div>
+          <span class="text-white/90">3,500+ Pro Users</span>
+        </div>
 
-      <!-- Avatar Stack -->
-      <div class="flex -space-x-2">
-        <img src="img/users.png" class="w-7 h-7 rounded-full border-2 border-white object-cover" />
-      
-      </div>
 
-      <!-- Text -->
-      <span class="text-white/90">3,500+ Pro Users</span>
-    </div>
-
-        <!-- Title -->
-        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4">
-          Naik kan Omzet Bisnismu <span class="underline decoration-white">Hingga 2x</span><br />
+        <h2 class="text-6xl font-semibold leading-snug">
+          Naik kan Omzet Bisnismu
+          <span class="underline decoration-white">Hingga 2x</span><br />
           Lewat Website / App Profesional
         </h2>
 
         <!-- Subtitle -->
         <p class="text-white/70 text-base md:text-lg mb-8">
-          Sudah 100+ Brand Lokal & Internasional, dari Indonesia hingga UK &<br class="hidden md:inline" />
+          Sudah 100+ Brand Lokal & Internasional, dari Indonesia hingga UK
+          &<br class="hidden md:inline" />
           Amerika, Pakai Jasaku dan Mulai Closing Lewat Websitenya!
         </p>
 
         <!-- CTA -->
-      <a href="#"
-      class="inline-flex items-center gap-2 px-6 py-3 rounded-md text-white text-base font-semibold
-              bg-[#0070f3] hover:bg-[#005de0] transition shadow-[0_0_20px_rgba(0,112,243,0.6)]">
-      Get Started
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-          stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </a>
+        <a href="#"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-md text-white text-base font-semibold bg-[#0055FE] hover:bg-[#005de0] transition shadow-[0_0_20px_rgba(0,112,243,0.6)]">
+          Get Started
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
 
         <!-- Video Preview -->
         <div class="mt-12">
           <div class="relative max-w-xl mx-auto rounded-2xl overflow-hidden shadow-lg aspect-video">
-  <!-- YouTube Embed -->
-  <iframe
-    src="https://www.youtube.com/embed/dX-5u-gNuHo"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    class="w-full h-full">
-  </iframe>
-</div>
-
+            <!-- YouTube Embed -->
+            <iframe src="https://www.youtube.com/embed/dX-5u-gNuHo" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen class="w-full h-full">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
+  </section>
+
+  <section class="relative bg-black py-4">
+    <!-- Fade Gradient Left -->
+    <div class="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-black to-transparent pointer-events-none z-10">
+    </div>
+    <!-- Fade Gradient Right -->
+    <div class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10">
+    </div>
+
+    <style>
+      @keyframes scrollLeft {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+
+    <div
+      class="max-w-6xl mx-auto flex justify-center items-center text-white/90 text-sm font-medium px-4 z-20 relative overflow-hidden">
+      <!-- Wrapper relatif -->
+      <div class="relative w-full">
+        <!-- Garis atas -->
+        <div
+          class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#3C63FF] to-transparent">
+        </div>
+
+        <!-- Carousel bergerak -->
+        <div
+          class="flex items-center justify-start gap-8 py-8 whitespace-nowrap animate-[scrollLeft_30s_linear_infinite]">
+          <img src="./img/c1.png" alt="" class="inline-block" />
+          <img src="./img/c2.png" alt="" class="inline-block" />
+          <img src="./img/c3.png" alt="" class="inline-block" />
+          <img src="./img/c4.png" alt="" class="inline-block" />
+          <!-- duplikat agar looping terlihat mulus -->
+          <img src="./img/c1.png" alt="" class="inline-block" />
+          <img src="./img/c2.png" alt="" class="inline-block" />
+          <img src="./img/c3.png" alt="" class="inline-block" />
+          <img src="./img/c4.png" alt="" class="inline-block" />
+        </div>
+
+        <!-- Garis bawah -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#3C63FF] to-transparent">
+        </div>
+      </div>
+    </div>
 
   </section>
 
-<section class="relative bg-black py-4">
-  <!-- Fade Gradient Left -->
-  <div class="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-black to-transparent pointer-events-none z-10"></div>
-  <!-- Fade Gradient Right -->
-  <div class="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-black to-transparent pointer-events-none z-10"></div>
-
-  <div class="max-w-6xl mx-auto flex justify-center items-center gap-10 text-white/90 text-sm font-medium px-4 z-20 relative">
-    <!-- Item 1 -->
-    <div class="flex items-center gap-2">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.66 0 3-1.34 3-3S13.66 5 12 5s-3 1.34-3 3 1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-      </svg>
-      <span class="text-white/70">SECURE <span class="text-white font-semibold">PURCHASE</span></span>
-    </div>
-
-    <!-- Item 2 -->
-    <div class="flex items-center gap-2">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m0-4h.01M12 6.5a6.5 6.5 0 1 1-6.5 6.5A6.5 6.5 0 0 1 12 6.5z" />
-      </svg>
-      <span class="text-white font-medium">INSTANT ACCESS</span>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="flex items-center gap-2">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-      </svg>
-      <span class="text-white font-medium">7-DAY GUARANTEE</span>
-    </div>
-
-    <!-- Item 4 -->
-    <div class="flex items-center gap-2">
-      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M4 20l6-6M20 4l-6 6" />
-      </svg>
-      <span class="text-white font-medium">CONSTANT UPDATES</span>
-    </div>
-  </div>
-</section>
-
-<section class="bg-[#0f0f0f] text-white py-16 px-4 md:px-20">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-    <!-- Left Project -->
-    <div class="relative">
-      <img src="img/1.png" alt="Cyclopedia" class="rounded-lg w-full">
-      <!-- <span class="absolute top-4 left-4 bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded">CYCLOPEDIA</span> -->
-    </div>
-
-    <!-- Right Project -->
-    <div class="flex flex-col justify-between">
-      <div class="space-y-4">
-        <img src="img/2.png" alt="Preview" class="rounded-lg w-full">
-        <p class="text-sm text-white/80 leading-relaxed">
-          Dibuat dari nol — <span class="font-medium text-white">UI modern</span>, indah, dan pengalaman dev yang mulus, semua oleh saya.
-        </p>
-      </div>
-      <p class="text-xs text-white/50 mt-4">Case Study Soon</p>
-    </div>
-  </div>
-
-  <!-- Cyclopedia Description -->
-  <div class="mt-12 max-w-3xl">
-    <h3 class="text-xl font-semibold mb-2">Saya bangun Cyclopedia agar akses pengetahuan lebih cepat dan sederhana.</h3>
-    <p class="text-xs text-white/50">Case Study Soon</p>
-  </div>
-
-  <!-- More Projects Grid -->
-  <div class="grid md:grid-cols-3 gap-8 mt-12">
-    <!-- Card 1 -->
-    <div>
-      <img src="img/3.png" alt="Project 1" class="rounded-lg mb-4">
-      <p class="text-sm text-white">Sebuah konsep Website perjalanan dengan tampilan bersih, modern, dan intuitif.</p>
-      <p class="text-xs text-white/50 mt-1">Case Study Soon</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div>
-      <img src="img/4.png" alt="Project 2" class="rounded-lg mb-4">
-      <p class="text-sm text-white">Website SantaiMoto hadir dengan tampilan bersih, cepat, dan mudah digunakan.</p>
-      <p class="text-xs text-white/50 mt-1">Case Study Soon</p>
-    </div>
-
-    <!-- Card 3 -->
-    <div>
-      <img src="img/5.png" alt="Project 3" class="rounded-lg mb-4">
-      <p class="text-sm text-white">Keahlian saya menciptakan desain bersih, efisien, dan siap pakai untuk berbagai platform.</p>
-      <p class="text-xs text-white/50 mt-1">Case Study Soon</p>
-    </div>
-  </div>
-</section>
-<section class="bg-[#0f0f0f] text-white py-16 px-4 md:px-20">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-    <!-- Left Project -->
-    <div>
-      <img src="img/6.png" alt="Skybyte" class="rounded-lg w-full">
-    </div>
-
-    <!-- Right Project -->
-    <div class="flex flex-col justify-between">
-      <div class="space-y-4">
-        <img src="img/7.png" alt="AI Website" class="rounded-lg w-full">
-        <p class="text-sm text-white/80 leading-relaxed">
-          Membuat website AI all-in-one yang <span class="font-medium text-white">pintar, elegan</span>, dan mudah digunakan kapan saja, di mana saja.
-        </p>
-      </div>
-      <p class="text-xs text-white/50 mt-4">Case Study Soon</p>
-    </div>
-  </div>
-
-  <!-- Skybyte Description -->
-  <div class="mt-12 max-w-3xl">
-    <h3 class="text-xl font-semibold mb-2">Saya desain dan kembangkan Skybyte agar modern, cepat, dan terpercaya untuk perusahaan.</h3>
-    <p class="text-xs text-white/50">Case Study Soon</p>
-  </div>
-
-  <!-- More Projects Grid -->
-  <div class="grid md:grid-cols-2 gap-8 mt-12">
-    <!-- Lusttres -->
-    <div>
-      <img src="img/8.png" alt="Lusttres" class="rounded-lg mb-4">
-      <p class="text-sm text-white">Membuat website belanja Lusttres yang cerdas, menawan, dan mudah digunakan di mana saja.</p>
-      <p class="text-xs text-white/50 mt-1">Case Study Soon</p>
-    </div>
-
-    <!-- SantaiMoto -->
-    <div>
-      <img src="img/9.png" alt="SantaiMoto" class="rounded-lg mb-4">
-      <p class="text-sm text-white">Desain saya untuk SantaiMoto mempermudah pengguna memesan layanan servis motor harian.</p>
-      <p class="text-xs text-white/50 mt-1">Case Study Soon</p>
-    </div>
-  </div>
-</section>
-<section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-20">
-  <div class="max-w-7xl mx-auto">
-    <!-- Title -->
-    <h2 class="text-2xl md:text-3xl font-semibold mb-12">Apa yang Saya Tawarkan Berbeda</h2>
-
-    <!-- Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Card 1: Experience -->
-      <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-lg">
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">Media</span>
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">E-commerce</span>
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">SaaS Startups</span>
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">E-learning</span>
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">Creator economy</span>
-          <span class="text-xs border border-white/30 px-3 py-1 rounded-full">Sports & Fitness</span>
+  <section class="relative bg-[#020202] text-white py-20 px-12 md:px-[9rem] overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-8">
+        <img src="img/1.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-8" />
+        <div class="max-w-lg">
+          <h3 class="text-xl md:text-4xl leading-snug mb-3">
+            Saya bangun Cyclopedia agar akses pengetahuan lebih cepat dan
+            sederhana.
+          </h3>
+          <p class="text-lg font-light text-white">Case Study Soon</p>
         </div>
-        <h3 class="font-semibold text-lg mb-1">Berpengalaman 6 tahun bangun solusi <span class="text-blue-400">lintas industri</span></h3>
-        <p class="text-sm text-white/70 leading-relaxed">
-          Kami telah menangani 400+ proyek lintas industri, dari perbankan hingga platform LIVE interaktif.
-        </p>
       </div>
-
-      <!-- Card 2: Konversi -->
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <div class="flex items-center justify-between mb-2 text-sm font-medium">
-          <span>Most websites convert poorly</span>
-          <span>0%</span>
-        </div>
-        <div class="h-2 bg-gray-300 rounded mb-4">
-          <div class="w-[4%] h-full bg-transparent"></div>
-        </div>
-
-        <div class="flex items-center justify-between mb-2 text-sm font-medium text-blue-700">
-          <span>Squareblack designs for conversion</span>
-          <span>4–8%</span>
-        </div>
-        <div class="h-2 bg-blue-100 rounded mb-6">
-          <div class="w-[60%] h-full bg-blue-600 rounded"></div>
-        </div>
-
-        <h3 class="font-semibold mb-2 text-base">
-          Fokus pada konversi — ubah trafik jadi penjualan nyata.
-        </h3>
-        <p class="text-sm text-gray-700">
-          Tingkatkan penjualan dan jangkau lebih banyak klien lewat desain yang optimal dan terarah.
-        </p>
-      </div>
-
-      <!-- Card 3: Long-term growth -->
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <img src="https://i.imgur.com/DpZzdoH.png" alt="Chart" class="w-full mb-4 rounded-lg" />
-        <h3 class="font-semibold mb-2 text-base">Strategi jangka panjang untuk hasil yang berkelanjutan</h3>
-        <p class="text-sm text-gray-700">
-          Kami merancang sekaligus mengoptimasi produk untuk terus berkembang.
-        </p>
-      </div>
-
-      <!-- Card 4: Design Reason -->
-      <div class="relative rounded-xl overflow-hidden shadow-lg group">
-        <img src="https://i.imgur.com/AcRMX0W.png" alt="Design Decision" class="w-full h-full object-cover transition group-hover:scale-105 duration-300">
-        <div class="absolute inset-0 bg-black/50 p-6 flex flex-col justify-end">
-          <div class="flex gap-2 mb-3">
-            <span class="bg-white text-black text-xs px-2 py-1 rounded-full">Why is it better?</span>
-            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Clearer CTA</span>
-            <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">Simplified messaging</span>
+      <div class="md:col-span-4 flex flex-col justify-between">
+        <div>
+          <img src="img/2.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
+          <div class="max-w-[21rem]">
+            <p class="text-base md:text-[24px] w-full text-white">
+              Dibuat dari nol - UI modern, indah, dan pengalaman dev yang
+              mulus, semua oleh saya.
+            </p>
           </div>
-          <h3 class="text-lg font-semibold">Setiap Keputusan Desain, <span class="text-blue-400">Ada Alasannya.</span></h3>
-          <p class="text-sm text-white/70">
-            Setiap elemen dirancang dengan tujuan—bukan sekadar estetika, tapi untuk fungsi dan hasil.
+        </div>
+        <p class="text-sm text-white/50 mt-4">Case Study Soon</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+      <div>
+        <img src="img/3.png" alt="Project 1" class="rounded-lg mb-4" />
+        <div class="max-w-[20rem]">
+          <p class="text-[24px] w-full text-white leading-tight">
+            Sebuah konsep Website perjalanan dengan tampilan bersih, modern,
+            dan intuitif.
           </p>
         </div>
+        <p class="text-md text-white/80 mt-2">Case Study Soon</p>
+      </div>
+      <div>
+        <img src="img/4.png" alt="Project 2" class="rounded-lg mb-4" />
+        <div class="max-w-[21rem]">
+          <p class="text-[24px] w-full text-white leading-tight">
+            Website SantaiMoto hadir dengan tampilan bersih, cepat, dan mudah
+            digunakan.
+          </p>
+        </div>
+        <p class="text-md text-white/80 mt-2">Case Study Soon</p>
+      </div>
+      <div>
+        <img src="img/5.png" alt="Project 3" class="rounded-lg mb-4" />
+        <div class="max-w-[21rem]">
+          <p class="text-[24px] w-full text-white leading-tight">
+            Keahlian saya menciptakan desain bersih, efisien, dan siap pakai
+            untuk berbagai platform.
+          </p>
+        </div>
+        <p class="text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
     </div>
-  </div>
-</section>
-<section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-20">
-  <div class="max-w-7xl mx-auto text-center mb-12">
-    <span class="text-sm bg-white/10 text-white/70 px-4 py-1 rounded-full inline-block mb-3">Testimonials</span>
-    <h2 class="text-2xl md:text-3xl font-semibold border-b border-blue-500 inline-block pb-2">
-      People love working with us
-    </h2>
-  </div>
 
-  <!-- Testimonials Grid -->
-  <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-    <!-- Card -->
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Desain dan pengembangannya rapi, fungsional, dan sangat membantu proses kerja kami.
+    <div class="relative mt-[12rem] z-10 max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-8">
+        <img src="img/10.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-8" />
+        <div class="max-w-[35rem]">
+          <h3 class="text-xl md:text-4xl leading-snug mb-3">
+            Saya desain dan kembangkan Skybyte agar modern, cepat, dan terpercaya untuk perusahaan.
+          </h3>
+          <p class="text-lg font-light text-white">Case Study Soon</p>
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div>
+          <img src="img/7.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
+          <div class="min-w-[25rem]">
+            <p class="text-base md:text-[24px] w-full leading-tight text-white">
+              Membuat website AI all-in-one yang pintar, elegan, dan mudah
+              digunakan kapan saja, di mana saja.
+            </p>
+          </div>
+        </div>
+        <p class="text-sm text-white/50 mt-4">Case Study Soon</p>
+      </div>
+    </div>
+    <div class="relative mt-[12rem] z-10 max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-4">
+        <div>
+          <img src="img/8.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
+          <div class="min-w-[25rem]">
+            <p class="text-base md:text-[24px] w-full leading-tight text-white">
+              Membuat website belanja Lusttres yang cerdas, menawan, dan mudah digunakan di mana saja.
+            </p>
+          </div>
+        </div>
+        <p class="text-sm text-white/50 mt-4">Case Study Soon</p>
+      </div>
+
+      <div class="md:col-span-8">
+        <img src="img/9.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-8" />
+        <div class="max-w-[40rem]">
+          <h3 class="text-xl md:text-4xl leading-snug mb-3">
+            Desain saya untuk SantaiMoto mempermudah pengguna memesan layanan servis motor harian.
+          </h3>
+        </div>
+        <p class="text-sm text-white/50 mt-4">Case Study Soon</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="bg-[#020202] text-white py-20 px-4 md:px-20">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-semibold md:text-6xl mb-12">
+        Apa yang Saya Tawarkan Berbeda
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#0A0A0A] relative p-12 rounded-4xl shadow-lg">
+          <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
+          </div>
+          <img src="./img/d1.png" class="pb-12" alt="" />
+
+          <div class="relative w-full px-0 space-y-2 mb-4 overflow-hidden">
+            <div class="flex gap-2 animate-scroll-left w-max min-w-full">
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Media</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">E-commerce</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">SaaS Startups</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">E-learning</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Creator economy</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Sports & Fitness</span>
+            </div>
+
+            <div class="flex gap-2 animate-scroll-left w-max min-w-full" style="animation-delay: 10s;">
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Media</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">E-commerce</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">SaaS Startups</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">E-learning</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Creator economy</span>
+              <span class="text-lg border border-white/30 px-10 py-2 rounded-full">Sports & Fitness</span>
+            </div>
+          </div>
+
+          <h3 class="text-4xl font-medium max-w-[28rem] mb-1 mt-[120px]">
+            Berpengalaman 6 tahun bangun solusi
+            <span class="text-[#0055FE]">lintas industri</span>
+          </h3>
+          <p class="text-lg text-white/50 font-light mt-6 mb-12">
+            Kami telah menangani 400+ proyek lintas industri, dari perbankan hingga platform LIVE interaktif.
+          </p>
+
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
+          </div>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
+          </div>
+        </div>
+        <!-- Background Track (Gray) -->
+        <div class="bg-white text-black px-12 py-12 rounded-3xl shadow-xl mx-auto">
+          <div class="mb-6">
+            <div class="flex items-center gap-2 w-[80%]">
+              <div class="relative flex-1 h-[36px] border  border-gray-300 bg-gray-100 rounded-sm overflow-hidden">
+                <div class="absolute top-0 left-0 h-full w-full bg-gray-200"></div>
+                <div class="absolute top-0 left-0 h-full bg-black" style="width: 10%"></div>
+              </div>
+              <span class="text-4xl font-bold w-[40px] text-right">0%</span>
+            </div>
+            <div class="flex items-center justify-between text-[13px] font-medium mb-1">
+              <span class="whitespace-nowrap text-lg mt-2">Most websites convert poorly</span>
+            </div>
+            <p class="text-lg text-black/40 leading-snug">(bad UI, UX & SEO practices, missed product potential)</p>
+          </div>
+
+          <div class="mb-6">
+            <div class="flex items-center gap-2 w-[90%]">
+              <div class="relative shadow-sm flex-1 h-[36px]  rounded-sm overflow-hidden">
+                <div class="absolute top-0 left-0 h-full w-full bg-gray-200"></div>
+                <div class="absolute top-0 left-0 h-full bg-[#0055FE]" style="width: 100%"></div>
+              </div>
+              <span class="text-4xl font-bold text-right">4-8%</span>
+            </div>
+            <div class="flex items-center justify-between text-[13px] font-medium mb-1">
+              <span class="whitespace-nowrap text-lg mt-2">Squareblack designs for conversion</span>
+            </div>
+            <p class="text-lg text-black/40 leading-snug">(heuristic analysis based + regular optimization)</p>
+          </div>
+
+          <!-- Headline and Description -->
+          <h3 class="text-3xl text-[#1B1B1B] pt-[100px] font-semibold leading-snug mb-2">
+            Fokus pada konversi — ubah trafik jadi penjualan nyata.
+          </h3>
+          <p class="text-lg text-[#8D8D8D] pt-12 leading-snug">
+            Tingkatkan penjualan dan jangkau lebih banyak klien lewat desain yang optimal dan terarah.
+          </p>
+        </div>
+
+
+        <!-- Card 3: Long-term growth -->
+        <div class="bg-white text-black p-12 rounded-4xl shadow-lg">
+          <img src="./img/cart.png" alt="Chart" class="w-full mb-4 pt-12 pb-6 rounded-lg" />
+          <h3 class=" font-semibold text-[#1B1B1B]  mb-2 text-[35px]">
+            Strategi jangka panjang untuk hasil yang berkelanjutan
+          </h3>
+          <p class="text-[17.86px] pb-10 text-[#8D8D8D]">
+            Kami merancang sekaligus mengoptimasi produk untuk terus
+            berkembang.
+          </p>
+        </div>
+
+        <!-- Card 4: Design Reason -->
+        <div class="relative bg-[#3C3C3C] rounded-4xl overflow-hidden shadow-lg group">
+          <img src="./img/card2.png" alt="Design Decision" class="w-full h-full object-cover  p-6 duration-300" />
+          <img src="./img/d1.png" alt="Logo" class="absolute top-8 left-8 m-4 w-12 h-12 object-contain z-10" />
+
+          <img src="./img/chat1.png" alt="Logo" class="absolute top-[10rem] left-12 z-10" />
+
+          <img src="./img/chat2.png" alt="Logo" class="absolute top-[13rem] left-[14rem] z-10" />
+
+          <img src="./img/chat3.png" alt="Logo" class="absolute top-[16rem] left-[10rem] z-10" />
+          <div class="absolute top-[20rem] right-[16rem] z-10">
+            <div class="flex flex-row gap-2">
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+            </div>
+          </div>
+
+          <h3 class="text-4xl absolute bottom-[10rem] left-[3rem] z-10">
+            Setiap Keputusan Desain,<br>
+            <span class="text-[#0055FE]">Ada Alasannya.</span>
+          </h3>
+
+          <p class="text-lg text-white/50 pr-12  absolute bottom-[5rem] left-[3rem] z-10">
+            Setiap elemen dirancang dengan tujuan—bukan sekadar estetika,
+            tapi untuk fungsi dan hasil.
+          </p>
+
+          <!-- <div class="absolute inset-0 bg-black/50 p-6 flex flex-col justify-end">
+            <div class="flex gap-2 mb-3">
+              <span class="bg-white text-black text-xs px-2 py-1 rounded-full">Why is it better?</span>
+              <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Clearer CTA</span>
+              <span class="bg-white/20 text-white text-xs px-2 py-1 rounded-full">Simplified messaging</span>
+            </div>
+            <h3 class="text-lg font-semibold">
+              Setiap Keputusan Desain,
+              <span class="text-blue-400">Ada Alasannya.</span>
+            </h3>
+            <p class="text-sm text-white/70">
+              Setiap elemen dirancang dengan tujuan—bukan sekadar estetika,
+              tapi untuk fungsi dan hasil.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#010101] text-white py-20 px-4 md:px-20">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+
+      <span
+        class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
+        Testimonials
+        <span
+          class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></span>
+      </span>
+      <br>
+      <div class="flex items-center justify-center w-full gap-4 py-8">
+        <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
+        <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
+          People love working with us
+        </h2>
+        <div class="flex-1  h-[4px] bg-gradient-to-r from-[#3C63FF] to-transparent"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
+        <!-- Left Card -->
+        <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Desain dan pengembangannya rapi, fungsional, dan sangat membantu proses kerja kami.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t1.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Aditya P Manager<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Bank Central Indonesia
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Card (Taller Height) -->
+        <div
+          class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden md:min-h-[300px]">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Pengalaman menggunakan hasil desain ini benar-benar luar biasa! Desain modern, fitur lengkap, dan proses
+            kustomisasi yang mudah membuat pembuatan website e-commerce jadi efisien, menyenangkan, dan sangat
+            memuaskan.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t2.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Badrus Shoolehk<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Software Architect
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Hasil desainnya sangat menyenangkan digunakan—tampilannya modern dan prosesnya berjalan sangat lancar.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t3.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Fathan<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Cyclopedia
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="relative bg-[#0A0A0A] rounded-2xl mt-[-70px] border border-white/10 p-6 text-white overflow-hidden">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Bekerja dengan hasil desain SantaiMoto adalah pengalaman luar biasa! Desainnya elegan, fiturnya lengkap, dan
+            kustomisasinya sangat mudah—membuat proses pembuatan website jadi lancar, efisien, dan menyenangkan.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t4.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Fadli<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Founder & CEO Santaimoto
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="relative bg-[#0A0A0A] rounded-2xl  border border-white/10 p-6 text-white overflow-hidden">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Hasil desain dan pengembangan Rise Live sangat memuaskan—tampilannya modern dan mudah digunakan. </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t5.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Garry<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Founder & CEO Pentarex
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="relative bg-[#0A0A0A] rounded-2xl mt-[-70px] border border-white/10 p-6 text-white overflow-hidden">
+          <div class="mb-4">
+            <img src="./img/Rating.svg" alt="5 stars" class="h-5 z-10">
+          </div>
+          <img src="./img/corak.svg" alt="Corak" class="absolute top-0 left-0" />
+          <p class="text-base text-white/80 leading-relaxed text-start mb-6">
+            Kami sangat puas dengan hasil kerja yang diberikan untuk proyek GetDone. Desainnya modern, navigasi
+            intuitif, performa stabil, dan setiap detail benar-benar diperhatikan—memberikan pengalaman pengguna yang
+            optimal di aplikasi maupun website kami. </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="./img/t6.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
+              <div>
+                <p class="text-white text-left">
+                  Handika<br>
+                  <span class="text-sm text-white/40 leading-none mt-1">
+                    Founder & CEO Get Done
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-md border border-white/10 flex items-center justify-center">
+              <img src="./img/x.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=" mt-12 bg-[#0A0A0A] mx-auto px-12 py-[9rem] rounded-3xl overflow-hidden relative z-10">
+        <img src="./img/corak2.svg" alt="Background Shape" class="absolute top-0 left-0">
+        <h2 class="text-5xl  md:text-6xl  mb-8">
+          Penasaran bagaimana kami bisa<br />
+          meningkatkan <span class="inline-flex items-center gap-1">
+            <img src="./img/panah.svg" alt="Arrow" class="inline">
+            konversi
+          </span><br />
+          dan kualitas produk Anda?
+        </h2>
+        <a href="#"
+          class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-8 py-4 text-lg  rounded-xl shadow">
+          <img src="./img/arik.jpg" alt="Ariq" class="w-5 h-5 rounded-full object-cover"> Book a call with Ariq →
+        </a>
+        <div class="flex items-center justify-center mt-4 gap-2">
+          <img src="./img/dot2.svg" alt="" />
+          <p class="text-sm text-white">I'm available to talk</p>
+        </div>
+        <p class="text-lg mt-4 text-white/60">
+          Or write to us at
+          <a href="mailto:arvyan.ariq@gmail.com" class="underline text-white">arvyan.ariq@gmail.com</a>
+        </p>
+      </div>
+  </section>
+
+  <section class="bg-[#020202]">
+    <div class="mx-auto text-center">
+      <h2 class="text-2xl px-12 text-white md:text-6xl text-start font-semibold mb-12">
+        My clients <span class="text-blue-500">100+</span>
+      </h2>
+
+      <div class="py-4 overflow-hidden">
+        <div class="flex flex-col gap-4">
+
+          <!-- Baris 1 -->
+          <div class="flex items-center gap-10 animate-marquee">
+            <!-- Logo asli -->
+            <img src="img/k1.png" class="w-[80px]" />
+            <img src="img/k2.png" class="w-[100px]" />
+            <img src="img/k3.png" class="w-[150px]" />
+            <img src="img/k4.png" class="w-[150px]" />
+            <img src="img/k5.png" class="w-[80px]" />
+            <img src="img/k6.png" class="w-[80px]" />
+            <img src="img/k7.png" class="w-[60px]" />
+            <img src="img/k8.png" class="w-[60px]" />
+
+            <!-- Duplikat semua -->
+            <img src="img/k1.png" class="w-[80px]" />
+            <img src="img/k2.png" class="w-[100px]" />
+            <img src="img/k3.png" class="w-[150px]" />
+            <img src="img/k4.png" class="w-[150px]" />
+            <img src="img/k5.png" class="w-[80px]" />
+            <img src="img/k6.png" class="w-[80px]" />
+            <img src="img/k7.png" class="w-[60px]" />
+            <img src="img/k8.png" class="w-[60px]" />
+          </div>
+
+          <!-- Baris 2 -->
+          <div class="flex items-center gap-10 animate-marquee-reverse">
+            <!-- Logo asli -->
+            <img src="img/k10.png" class="w-[100px]" />
+            <img src="img/k11.png" class="w-[200px]" />
+            <img src="img/k12.png" class="w-[100px]" />
+            <img src="img/k13.png" class="w-[100px]" />
+            <img src="img/k14.png" class="w-[80px]" />
+            <img src="img/k15.png" class="w-[100px]" />
+            <img src="img/k16.png" class="w-[100px]" />
+
+            <!-- Duplikat semua -->
+            <img src="img/k10.png" class="w-[100px]" />
+            <img src="img/k11.png" class="w-[200px]" />
+            <img src="img/k12.png" class="w-[100px]" />
+            <img src="img/k13.png" class="w-[100px]" />
+            <img src="img/k14.png" class="w-[80px]" />
+            <img src="img/k15.png" class="w-[100px]" />
+            <img src="img/k16.png" class="w-[100px]" />
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-20">
+
+    <div class="flex justify-center">
+      <p
+        class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
+        Pricing
+        <span
+          class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent">
+        </span>
       </p>
-      <div>
-        <p class="font-semibold">Aditya P <span class="text-white/50">Manager</span></p>
-        <p class="text-xs text-white/40">Bank Central Indonesia</p>
-      </div>
     </div>
 
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Pengalaman menggunakan hasil desain ini benar-benar luar biasa! Desain modern, ringan, dan proses kolaborasi sangat efisien.
-      </p>
-      <div>
-        <p class="font-semibold">Badrus Shoolehk <span class="text-white/50">Software Architect</span></p>
-      </div>
+    <br>
+    <div class="flex items-center justify-center w-full gap-4 pb-12">
+      <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
+      <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
+        Booking a design sprint & Dev
+      </h2>
+      <div class="flex-1  h-[4px] bg-gradient-to-r from-[#3C63FF] to-transparent"></div>
     </div>
 
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Hasil desainnya sangat menyenangkan digunakan—tampilannya modern dan prosesnya berjalan sangat lancar.
-      </p>
-      <div>
-        <p class="font-semibold">Fathan <span class="text-white/50">Cyclopedia</span></p>
-      </div>
-    </div>
+    <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
 
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Bekerja dengan hasil desain SantaiMoto adalah pengalaman luar biasa! Desainnya elegan, ringan, dan efisien.
-      </p>
-      <div>
-        <p class="font-semibold">Fadil <span class="text-white/50">Founder & CEO SantaiMoto</span></p>
-      </div>
-    </div>
+      <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
+        <!-- Gradient Line -->
+        <div
+          class="absolute top-0 left-1/2 w-[40%] h-[2px] transform -translate-x-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20">
+        </div>
 
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Hasil desain dan pengembangan Rise Live sangat memukau—tampilannya modern dan mudah digunakan.
-      </p>
-      <div>
-        <p class="font-semibold">Garry <span class="text-white/50">Founder & CEO Pentarex</span></p>
-      </div>
-    </div>
+        <!-- Radial Glow -->
+        <div
+          class="absolute top-[-60px] left-1/2 w-[300px] h-[200px] bg-blue-500/30 blur-3xl rounded-full transform -translate-x-1/2 z-10">
+        </div>
+        <!-- Corak Image -->
+        <!-- Content -->
+        <h3 class="text-[20px] font-semibold leading-relaxed text-start mb-2 flex items-center gap-2 relative z-20">
+          Standard Landing page
+          <img src="./img/starter.svg" alt="" />
+        </h3>
+        <p class="text-white text-[16px] pr-3 relative z-20">
+          Essential tools for learners starting their journey
+        </p>
+        <h1 class="text-4xl font-bold my-4 relative z-20">Rp 1.000.000</h1>
 
-    <div class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-6 rounded-xl shadow-md text-left space-y-4">
-      <div class="text-yellow-400 text-lg">★★★★★</div>
-      <p class="text-sm text-white/80">
-        Kami sangat puas dengan hasil kerja yang diberikan untuk proyek GetDone. Desainnya efisien, cepat, dan modern.
-      </p>
-      <div>
-        <p class="font-semibold">Handka <span class="text-white/50">Founder & CEO Get Done</span></p>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Button -->
+        <div
+          class="relative w-full px-8 py-4 mt-4 rounded-xl border-2 border-white/10 bg-black text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
 
-<!-- CTA Section -->
-<section class="bg-gradient-to-r from-[#0f172a] via-[#111827] to-[#0f172a] py-20 px-4 md:px-20 text-white text-center relative overflow-hidden">
-  <div class="max-w-4xl mx-auto relative z-10">
-    <h2 class="text-2xl md:text-3xl font-semibold leading-snug mb-8">
-      Penasaran bagaimana kami bisa<br />
-      meningkatkan <span class="text-blue-400">konversi</span><br />
-      dan kualitas produk Anda?
-    </h2>
+          <!-- Button Text -->
+          <div class="flex gap-2 w-full justify-center items-center">
+            <span class="relative z-10 text">Get Started</span>
+            <span class="relative z-10 text-xl">→</span>
+          </div>
+        </div>
 
-    <a href="#" class="inline-flex items-center bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-full text-sm font-medium shadow">
-      📅 Book a call with Ariq →
-    </a>
-
-    <p class="text-xs text-white/50 mt-4">I'm available to talk</p>
-    <p class="text-sm mt-4 text-white/60">
-      Or write to us at <a href="mailto:arvyan.ariq@gmail.com" class="underline">arvyan.ariq@gmail.com</a>
-    </p>
-  </div>
-</section>
-<section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-20">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-2xl md:text-3xl font-semibold mb-12">
-      My clients <span class="text-blue-500">100+</span>
-    </h2>
-
-    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center justify-center">
-      <img src="/img/clients/bank-indonesia.png" alt="Bank Indonesia" class="h-10 mx-auto">
-      <img src="/img/clients/shein.png" alt="SHEIN" class="h-8 mx-auto">
-      <img src="/img/clients/danone.png" alt="Danone" class="h-8 mx-auto">
-      <img src="/img/clients/ot.png" alt="OT" class="h-10 mx-auto">
-      <img src="/img/clients/dewq-finance.png" alt="DewQ Finance" class="h-8 mx-auto">
-      <img src="/img/clients/cyclopedia.png" alt="Cyclopedia" class="h-8 mx-auto">
-
-      <img src="/img/clients/getdone.png" alt="Get Done" class="h-8 mx-auto">
-      <img src="/img/clients/santaimoto.png" alt="SantaiMoto" class="h-8 mx-auto">
-      <img src="/img/clients/brand-unknown1.png" alt="Client 9" class="h-8 mx-auto">
-      <img src="/img/clients/peruri.png" alt="Peruri" class="h-8 mx-auto">
-      <img src="/img/clients/nikahxpress.png" alt="NikahXpress" class="h-8 mx-auto">
-      <img src="/img/clients/bookus.png" alt="BookUs" class="h-8 mx-auto">
-
-      <img src="/img/clients/untad.png" alt="UNTAD" class="h-10 mx-auto">
-      <img src="/img/clients/qalca.png" alt="QALCA" class="h-8 mx-auto">
-    </div>
-  </div>
-</section>
-<section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-20">
-  <div class="text-center mb-12">
-    <span class="text-sm bg-white/10 px-4 py-1 rounded-full mb-2 inline-block">Pricing</span>
-    <h2 class="text-2xl md:text-3xl font-semibold border-b border-blue-500 inline-block pb-2">
-      Booking a design sprint & Dev
-    </h2>
-  </div>
-
-  <!-- Pricing Cards -->
-  <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-    <!-- Card 1 -->
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow-md flex flex-col justify-between">
-      <div>
-        <h3 class="text-lg font-semibold mb-1">Standard Landing page <span class="text-xs bg-white/10 text-white/70 px-2 py-0.5 rounded ml-2">Starter</span></h3>
-        <p class="text-2xl font-bold mb-4">Rp 1.000.000</p>
-        <ul class="text-sm text-white/70 space-y-2 mb-6">
-          <li>✔ Landing page lengkap siap pakai</li>
-          <li>✔ Desain responsif untuk semua perangkat</li>
-          <li>✔ File Figma + export HTML / Wordpress</li>
-          <li>✔ Struktur layout mudah diedit ulang</li>
-          <li>✔ Cocok untuk beragam produk dan layanan</li>
-          <li>✔ Siap digunakan untuk kebutuhan pribadi</li>
-          <li>✔ Desain ringan dan cepat diakses</li>
+        <!-- List -->
+        <ul class="space-y-2 mt-5 text-[16px] text-white text-sm relative z-20">
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Landing page lengkap
+              siap pakai</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Desain responsif
+              untuk semua perangkat</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>File Figma + export
+              HTML / Wordpress</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Struktur layout mudah
+              diedit ulang</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Cocok untuk beragam
+              produk dan layanan</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Siap digunakan untuk
+              kebutuhan pribadi</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Desain ringan dan
+              cepat diakses</span></li>
         </ul>
       </div>
-      <a href="#" class="bg-white text-black py-2 rounded text-sm font-medium text-center hover:bg-gray-200 transition">Get Started →</a>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow-md border border-blue-500 flex flex-col justify-between">
-      <div>
-        <h3 class="text-lg font-semibold mb-1">Pro website / App <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded ml-2">Most Popular</span></h3>
-        <p class="text-2xl font-bold mb-4 text-blue-400">Rp 2.500.000</p>
-        <ul class="text-sm text-white/70 space-y-2 mb-6">
-          <li>✔ Website lengkap dengan beberapa halaman</li>
-          <li>✔ Desain responsif untuk semua perangkat</li>
-          <li>✔ File Figma + export HTML / Wordpress</li>
-          <li>✔ Design Premium & mudah dikembangkan</li>
-          <li>✔ Fleksibel untuk berbagai jenis kebutuhan</li>
-          <li>✔ Siap digunakan untuk kebutuhan pribadi</li>
-          <li>✔ Performa cepat & siap dipasang kapan saja</li>
+
+      <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
+        <!-- Gradient Line -->
+        <div
+          class="absolute top-0 left-1/2 w-[40%] h-[2px] transform -translate-x-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20">
+        </div>
+
+        <!-- Radial Glow -->
+        <div
+          class="absolute top-[-60px] left-1/2 w-[300px] h-[200px] bg-blue-500/30 blur-3xl rounded-full transform -translate-x-1/2 z-10">
+        </div>
+        <!-- Corak Image -->
+        <!-- Content -->
+        <h3 class="text-[20px] font-semibold leading-relaxed text-start mb-2 flex items-center gap-2 relative z-20">
+          Pro website / App
+          <img src="./img/right.svg" alt="" />
+        </h3>
+        <p class="text-white text-[16px] pr-3 relative z-20">
+          Beginners who are looking for essential resources and support
+        </p>
+        <h1 class="text-4xl font-bold my-4 relative z-20">Rp 2.500.000</h1>
+
+        <!-- Button -->
+        <div
+          class="relative w-full px-8 py-4 mt-4 rounded-xl border-2 border-white/10  bg-[#0055FE] hover:bg-[#005de0] transition shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
+
+          <!-- Button Text -->
+          <div class="flex gap-2 w-full justify-center items-center">
+            <span class="relative z-10 text">Get Started</span>
+            <span class="relative z-10 text-xl">→</span>
+          </div>
+        </div>
+
+        <!-- List -->
+        <ul class="space-y-2 mt-5 text-[16px] text-white text-sm relative z-20">
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Website lengkap
+              dengan beberapa halaman</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Desain responsif
+              untuk semua perangkat</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>File Figma + export
+              HTML / Wordpress </span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Design Premium &
+              mudah dikembangkan</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Fleksibel untuk
+              berbagai jenis kebutuhan</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Siap digunakan untuk
+              kebutuhan pribadi</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Performa cepat & siap
+              dipasang kapan saja</span></li>
         </ul>
       </div>
-      <a href="#" class="bg-blue-600 text-white py-2 rounded text-sm font-medium text-center hover:bg-blue-500 transition">Get Started →</a>
-    </div>
 
-    <!-- Card 3 -->
-    <div class="bg-[#1e293b] p-6 rounded-xl shadow-md flex flex-col justify-between">
-      <div>
-        <h3 class="text-lg font-semibold mb-1">Platinum website / App <span class="text-xs bg-white/10 text-white/70 px-2 py-0.5 rounded ml-2">High-End</span></h3>
-        <p class="text-2xl font-bold mb-4">Rp 25.000.000</p>
-        <ul class="text-sm text-white/70 space-y-2 mb-6">
-          <li>✔ Website full dengan fitur lengkap & premium</li>
-          <li>✔ Desain responsif, elegan & siap untuk scaling</li>
-          <li>✔ File Figma + HTML/CSS/WordPress</li>
-          <li>✔ Komponen fleksibel & scalable</li>
-          <li>✔ Untuk kebutuhan kompleks & brand besar</li>
-          <li>✔ Akses penuh kustomisasi lanjutan</li>
-          <li>✔ Prioritas dukungan</li>
+      <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
+        <!-- Gradient Line -->
+        <div
+          class="absolute top-0 left-1/2 w-[40%] h-[2px] transform -translate-x-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20">
+        </div>
+
+        <!-- Radial Glow -->
+        <div
+          class="absolute top-[-60px] left-1/2 w-[300px] h-[200px] bg-blue-500/30 blur-3xl rounded-full transform -translate-x-1/2 z-10">
+        </div>
+        <!-- Corak Image -->
+        <!-- Content -->
+        <h3 class="text-[20px] font-semibold leading-relaxed text-start mb-2 flex items-center gap-2 relative z-20">
+          Platinum website / App
+          <img src="./img/right.svg" alt="" />
+        </h3>
+        <p class="text-white text-[16px] pr-3 relative z-20">
+          Comprehensive features for experts seeking mastery
+        </p>
+        <h1 class="text-4xl font-bold my-4 relative z-20">Rp 25.000.000</h1>
+
+        <!-- Button -->
+        <div
+          class="relative w-full px-8 py-4 mt-4 rounded-xl border-2 border-white/10 bg-black text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
+
+          <!-- Button Text -->
+          <div class="flex gap-2 w-full justify-center items-center">
+            <span class="relative z-10 text">Get Started</span>
+            <span class="relative z-10 text-xl">→</span>
+          </div>
+        </div>
+
+        <!-- List -->
+        <ul class="space-y-2 mt-5 text-[16px] text-white text-sm relative z-20">
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Website full dengan
+              fitur lengkap & premium</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Desain responsif,
+              elegan & siap untuk scaling</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>File Figma +
+              HTML/CSS/WordPress </span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Komponen fleksibel &
+              scalable</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Untuk kebutuhan
+              kompleks & brand besar</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Akses penuh
+              kustomisasi lanjutan</span></li>
+          <li class="flex items-start gap-2"><img src="./img/check.svg" class="mt-1 w-4 h-4"><span>Prioritas
+              dukungan</span></li>
         </ul>
       </div>
-      <a href="#" class="bg-white text-black py-2 rounded text-sm font-medium text-center hover:bg-gray-200 transition">Get Started →</a>
+
+
     </div>
-  </div>
-</section>
+    <div class="relative py-20 mt-12 mx-[2.2rem] mt border border-gray-800 md:px-20 overflow-hidden rounded-xl">
+      <img src="./img/bg2.png" alt="Background" class="absolute inset-0 w-full h-full object-cover z-0" />
 
-<!-- CTA Block -->
-<section class="relative bg-[#0f172a] py-20 px-4 md:px-20 text-white overflow-hidden">
-  <div class="max-w-3xl mx-auto text-center relative z-10">
-    <span class="text-sm bg-white/10 px-4 py-1 rounded-full mb-4 inline-block">Get Started</span>
-    <h2 class="text-2xl md:text-3xl font-semibold leading-snug mb-8">
-      Not sure if it’s the right fit?<br />
-      <span class="text-blue-400">Schedule a Call Today!</span>
-    </h2>
-    <a href="#" class="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-full font-medium text-sm transition">📞 Book A Free Consultation</a>
-  </div>
-</section>
+      <div class="max-w-3xl mx-auto text-center relative z-10 text-white">
+        <span class="text-lg bg-white/10 px-4 py-2 rounded-full inline-block">
+          Get Started
+        </span>
+        <h2 class="text-3xl md:text-4xl mt-3 font-semibold leading-snug mb-8">
+          Not sure if it’s the right fit?<br />
+          <span class="text-blue-400">Schedule a Call Today!</span>
+        </h2>
 
-<!-- Footer -->
-<footer class="bg-black text-white py-10 px-4 md:px-20 text-sm">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-6">
-      <span class="font-semibold">Ariq Arvy</span>
-      <div class="space-x-6 hidden md:inline-block">
+        <div
+          class="relative px-2 mt-4 inline-block py-2 rounded-xl border-2 border-white/10  bg-[#3960F9]  shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
+
+          <!-- Button Text -->
+          <div class="flex gap-2  justify-center items-center">
+            <span class="relative z-10 font-normal">Book A Free Consultantion</span>
+            <span class="relative z-10 text-xl">→</span>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-[#0f0f0f] text-white text-sm px-4 md:px-20 py-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <!-- Left: Logo / Name -->
+      <div class="font-bold text-lg">Ariq Arvy</div>
+
+      <!-- Center: Navigation -->
+      <div class="space-x-6">
         <a href="#" class="hover:underline">Home</a>
         <a href="#" class="hover:underline">Get Started</a>
         <a href="#" class="hover:underline">Privacy Policy</a>
         <a href="#" class="hover:underline">Terms & Conditions</a>
       </div>
-    </div>
-    <div class="text-white/50 text-xs text-center md:text-right w-full md:w-auto">
-      <p>© EduCore 2024. <span class="block md:inline">Designed by Ariq Arvy</span></p>
-    </div>
-  </div>
-</footer>
 
-  </body>
+      <!-- Right: Social Icons -->
+      <div class="flex gap-4">
+        <a href=""><img src="./img/m1.svg" alt=""></a>
+        <a href=""><img src="./img/m2.svg" alt=""></a>
+        <a href=""><img src="./img/m3.svg" alt=""></a>
+        <a href=""><img src="./img/m4.svg" alt=""></a>
+      </div>
+    </div>
+
+    <!-- Gradient border line -->
+    <div class="h-px w-full my-6 bg-gradient-to-r from-transparent via-[#3C63FD] to-transparent"></div>
+
+    <!-- Footer bottom content -->
+    <div class="pt-4 text-xs flex flex-col md:flex-row justify-between items-center text-white/70">
+      <p>© EduCore 2024.</p>
+      <p>Designed by Ariq Arvy</p>
+    </div>
+  </footer>
+
+  <script>
+    let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+      // Scroll down → hide navbar
+      navbar.classList.add("fixed", "top-0", "left-0", "w-full");
+      navbar.style.transform = "translateY(-100%)";
+    } else {
+      // Scroll up → show navbar
+      navbar.classList.add("fixed", "top-0", "left-0", "w-full");
+      navbar.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
+  });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+    new Swiper(".mySwiper", {
+      loop: true,
+      loopedSlides: 4, // Ini bikin slide tetap muter walau slide-nya cuma 2
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      speed: 3000,
+      slidesPerView: "auto",
+      spaceBetween: 30,
+    });
+
+  </script>
+
+</body>
+
 </html>
