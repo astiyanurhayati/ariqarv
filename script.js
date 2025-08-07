@@ -7,17 +7,6 @@
       navbar.classList.remove('bg-white/10', 'backdrop-blur-md');
     }
   });
-new Swiper(".mySwiper", {
-  loop: true,
-  loopedSlides: 4,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-  },
-  speed: 3000,
-  slidesPerView: "auto",
-  spaceBetween: 30,
-});
 
 
 const openBtn = document.getElementById('openModal');
@@ -46,3 +35,6 @@ const openBtn = document.getElementById('openModal');
       modal.classList.remove('flex');
     }
   });
+
+
+
