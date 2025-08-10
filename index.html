@@ -11,7 +11,6 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -33,10 +32,10 @@
 
         <!-- BUTTON -->
         <a href="#"
-          class="inline-flex items-center gap-3 bg-neutral-900 text-white px-5 py-2 rounded-lg shadow text-sm font-medium hover:bg-neutral-800 transition">
+          class="inline-flex items-center gap-3 bg-blue-600 text-white px-5 py-2 rounded-lg shadow text-sm font-medium hover:bg-neutral-800 transition">
           <span class="relative flex h-4 w-4">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-[#0055FE]"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
           </span>
           Book a quick call
           <span class="relative z-10 text-xl">→</span>
@@ -87,7 +86,7 @@
         </p>
 
         <!-- CTA Button -->
-        <a href="#"
+        <!-- <a href="#"
           class="relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 mt-5 rounded-md border border-white/10 bg-[#0055FE] hover:bg-[#005de0] shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-sm font-semibold overflow-hidden transition duration-300 hover:scale-105 z-20">
           <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
@@ -102,26 +101,34 @@
             stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
+        </a> -->
+        <a href="#"
+          class="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-xl shadow text-sm font-medium hover:bg-neutral-800 transition">
+          <span class="relative flex h-8 w-8">
+            <img src="./img/arik.jpg" alt="Michal" class="rounded-full w-[30px] object-cover" />
+            <!-- Status dot -->
+            <span class="absolute top-0 right-0 flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+            </span>
+          </span>
+
+          <!-- Text -->
+          <span class="text-lg">Book a call with Ariq</span>
+
+          <!-- Arrow -->
+          <span class="text-xl">→</span>
         </a>
 
         <!-- Embedded Video -->
         <div class="mt-12">
-          <div id="openModal" class="relative max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg aspect-video">
+          <div id="openModal" class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-lg aspect-video">
             <iframe src="https://www.youtube.com/embed/dX-5u-gNuHo" title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen class="w-full h-full"></iframe>
           </div>
         </div>
 
-        <!-- Modal -->
-        <div id="videoModal"
-          class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 transition duration-300">
-          <div class="relative w-full max-w-3xl aspect-video bg-black rounded-xl overflow-hidden mx-4">
-            <button id="closeModal" class="absolute top-2 right-2 text-white text-2xl z-50">&times;</button>
-            <iframe id="youtubePlayer" class="w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media"
-              allowfullscreen></iframe>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -179,73 +186,62 @@
 
   </section>
 
-  <section class="relative bg-[#020202] text-white md:py-20 py-12 px-6 md:px-[9rem] overflow-hidden">
-    <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-8">
+  <section class="relative bg-[#020202] text-white md:py-20 py-12 px-2 md:px-[2rem] overflow-hidden">
+    <div class="relative z-10 md:mx-[6.25rem] mx-2 grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-8 card-ar">
         <img src="img/1.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-8" />
         <div class="max-w-lg">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Saya bangun Cyclopedia agar akses pengetahuan lebih cepat dan
+            Saya bangun Cyclopedia agar <br class="hidden md:block">  akses pengetahuan lebih cepat <br class="hidden md:block">  dan
             sederhana.
           </h3>
           <p class="md:text-lg text-sm font-light text-white/80">Case Study Soon</p>
         </div>
       </div>
-      <div class="md:col-span-4 flex flex-col justify-between">
+      <div class="md:col-span-4 card-ar flex flex-col justify-between">
         <div>
           <img src="img/2.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
           <div class="max-w-[21rem]">
             <p class="text-base md:text-[24px] w-full text-white">
-              Dibuat dari nol - UI modern, indah, dan pengalaman dev yang
+              Dibuat dari nol - UI modern, <br class="hidden md:block">  indah, dan pengalaman dev <br class="hidden md:block">  yang
               mulus, semua oleh saya.
             </p>
           </div>
         </div>
-        <p class="text-sm text-white/80 mt-4">Case Study Soon</p>
+        <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
     </div>
-
-    <div class="grid md:grid-cols-3 gap-8 mt-12">
+    <div class="grid card-ar  md:grid-cols-3 gap-12 md:mx-[6.25rem] mx-2 mt-12 pb-12">
       <div>
-        <img src="img/3.png" alt="Project 1" class="rounded-lg mb-4" />
-        <div class="max-w-[20rem]">
-          <p class="text-[24px] w-full text-white leading-tight">
-            Sebuah konsep Website perjalanan dengan tampilan bersih, modern,
-            dan intuitif.
-          </p>
-        </div>
+        <img src="img/3.png" alt="Project 1" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] text-white leading-tight">
+          Sebuah konsep Website perjalanan <br class="hidden md:block">  dengan tampilan bersih, modern,<br class="hidden md:block">  dan intuitif.
+        </p>
         <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
-      <div>
-        <img src="img/4.png" alt="Project 2" class="rounded-lg mb-4" />
-        <div class="max-w-[21rem]">
-          <p class="text-[24px] w-full text-white leading-tight">
-            Website SantaiMoto hadir dengan tampilan bersih, cepat, dan mudah
-            digunakan.
-          </p>
-        </div>
-        <p class="md:text-md text-sm text-white/80 mt-2">Case Study Soon</p>
+      <div class="md:mt-0 card-ar">
+        <img src="img/4.png" alt="Project 2" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] text-white leading-tight">
+          Website SantaiMoto hadir dengan <br class="hidden md:block"> tampilan bersih, cepat, dan mudah <br class="hidden md:block"> digunakan.
+        </p>
+        <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
-      <div>
-        <img src="img/5.png" alt="Project 3" class="rounded-lg mb-4" />
-        <div class="max-w-[21rem]">
-          <p class="text-[24px] w-full text-white leading-tight">
-            Keahlian saya menciptakan desain bersih, efisien, dan siap pakai
-            untuk berbagai platform.
-          </p>
-        </div>
-        <p class="text-md text-white/80 mt-2">Case Study Soon</p>
+      <div class="md:mt-0 card-ar mt-2">
+        <img src="img/5.png" alt="Project 3" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] text-white leading-tight">
+          Keahlian saya menciptakan desain <br class="hidden md:block">  bersih, efisien, dan siap pakai untuk <br class="hidden md:block">  berbagai platform.
+        </p>
+        <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
     </div>
-
     <!-- SECTION 1 -->
     <div
-      class="relative mt-12 md:mt-32 z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-0 md:px-0">
-      <div class="md:col-span-8">
+      class="relative mt-12 md:mt-36 margin z-10  card-ar md:mx-[6.25rem] mx-2  grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-8 ">
         <img src="img/10.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <div class="max-w-3xl">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Saya desain dan kembangkan Skybyte agar modern, cepat, dan terpercaya untuk perusahaan.
+            Saya desain dan kembangkan Skybyte agar <br class="hidden md:block">  modern, cepat, dan terpercaya untuk <br class="hidden md:block">  perusahaan.
           </h3>
           <p class=" text-sm md:text-lg font-light text-white/80">Case Study Soon</p>
         </div>
@@ -259,216 +255,213 @@
         <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
     </div>
-
     <!-- SECTION 2 -->
-    <div
-      class="relative md:mt-32 mt-12 z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-0 md:px-0">
-      <div class="md:col-span-4 order-2 md:order-1">
+    <div class="relative mt-12 md:mt-36 card-ar  margin  z-10  md:mx-[6.25rem] mx-2 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-4 order-2 card-ar md:order-1">
         <img src="img/8.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <p class="text-base md:text-[24px] leading-tight text-white">
-          Membuat website belanja Lusttres yang cerdas, menawan, dan mudah digunakan di mana saja.
+          Membuat website belanja Lusttres <br class="hidden md:block">  yang cerdas, menawan, dan mudah <br class="hidden md:block">  digunakan di mana saja.
         </p>
-        <p class="text-sm text-white/80 mt-4">Case Study Soon</p>
+        <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
-      <div class="md:col-span-8 order-1 md:order-2">
+      <div class="md:col-span-8 card-ar order-1 md:order-2">
         <img src="img/9.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <div class="max-w-3xl">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Desain saya untuk SantaiMoto mempermudah pengguna memesan layanan servis motor harian.
+            Desain saya untuk SantaiMoto mempermudah <br class="hidden md:block">  pengguna memesan layanan servis motor harian.
           </h3>
         </div>
-        <p class="text-sm text-white/80 mt-4">Case Study Soon</p>
+        <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
     </div>
-
     </div>
+    <button id="show-more"
+      class="md:hidden w-full mt-6 border border-gray-300 rounded-full py-2 px-4 text-sm font-medium text-white  flex items-center justify-center gap-1">
+      Show more projects (9)
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
   </section>
 
-  <section class="bg-[#020202] text-white md:py-20 py-12 px-4 md:px-20">
-    <div class="max-w-7xl mx-auto">
+  <section class="bg-[#020202] text-white md:py-20 py-12 px-4 md:px-[6.25rem]">
+    <div class=" max-w-7xl py-10 mx-auto">
       <h2 class="text-2xl font-semibold md:text-6xl mb-6 md:mb-12">
         Apa yang Saya Tawarkan Berbeda
       </h2>
-      <div class="container mx-auto px-0 md:px-4 py-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          <!-- Card 1 -->
-          <div class="bg-[#0A0A0A] relative px-6 py-10 md:px-12 md:py-16 rounded-4xl shadow-lg">
-            <div
-              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
-            </div>
-            <div
-              class="absolute top-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
-            </div>
-
-            <img src="./img/d1.png" class="mb-12" alt="Industry Image" />
-
-            <div class="relative w-full space-y-2 mb-4 overflow-hidden">
-              <div class="flex gap-2 animate-scroll-left w-max min-w-full whitespace-nowrap">
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Media</span>
-                <span
-                  class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-commerce</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">SaaS
-                  Startups</span>
-                <span
-                  class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-learning</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Creator
-                  economy</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Sports &
-                  Fitness</span>
-              </div>
-
-              <div class="flex gap-2 animate-scroll-left w-max min-w-full whitespace-nowrap"
-                style="animation-delay: 10s;">
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Media</span>
-                <span
-                  class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-commerce</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">SaaS
-                  Startups</span>
-                <span
-                  class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-learning</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Creator
-                  economy</span>
-                <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Sports &
-                  Fitness</span>
-              </div>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl md:text-4xl font-medium max-w-[28rem] mb-2 mt-20 md:mt-[120px]">
-              Berpengalaman 6 tahun bangun solusi <span class="text-[#0055FE]">lintas industri</span>
-            </h3>
-
-            <p class="text-sm sm:text-base text-white/50 font-light mt-4 md:mt-6 mb-8 md:mb-12">
-              Kami telah menangani 400+ proyek lintas industri, dari perbankan hingga platform LIVE interaktif.
-            </p>
-
-            <div
-              class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
-            </div>
-            <div
-              class="absolute bottom-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
-            </div>
-          </div>
-
-          <div class="bg-white text-black px-6 sm:px-8 md:px-12 py-10 md:py-12 rounded-3xl shadow-xl mx-auto max-w-3xl">
-            <!-- First Progress -->
-            <div class="mb-8">
-              <div class="flex items-center gap-2 w-full sm:w-[80%]">
-                <div class="relative flex-1 h-[36px] border border-gray-300 bg-gray-100 rounded-sm overflow-hidden">
-                  <div class="absolute top-0 left-0 h-full w-full bg-gray-200"></div>
-                  <div class="absolute top-0 left-0 h-full bg-black" style="width: 10%"></div>
-                </div>
-                <span class="text-2xl sm:text-3xl md:text-4xl font-semibold w-[50px] text-right">0%</span>
-              </div>
-              <div class="flex items-start justify-between text-[13px] font-medium mb-1">
-                <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Most websites convert poorly</span>
-              </div>
-              <p class="text-sm sm:text-base md:text-lg text-black/40 leading-snug">
-                (bad UI, UX & SEO practices, missed product potential)
-              </p>
-            </div>
-
-            <!-- Second Progress -->
-            <div class="mb-8">
-              <div class="flex items-center gap-2 w-full sm:w-[90%]">
-                <div class="relative flex-1 h-[36px] rounded-sm">
-                  <div class="absolute top-0 left-0 h-full w-full bg-gray-200 rounded-sm"></div>
-                  <div
-                    class="absolute top-0 left-0 h-full w-full bg-[#0055FE] rounded-sm shadow-[0_0_20px_1px_#0055FE80]">
-                  </div>
-                </div>
-
-                <span class="text-2xl sm:text-3xl md:text-4xl font-semibold text-right">4-8%</span>
-              </div>
-              <div class="flex items-start justify-between text-[13px] font-medium mb-1">
-                <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Squareblack designs for
-                  conversion</span>
-              </div>
-              <p class="text-sm sm:text-base md:text-lg text-black/40 leading-snug">
-                (heuristic analysis based + regular optimization)
-              </p>
-            </div>
-
-            <!-- Headline and Description -->
-            <h3 class="text-3xl sm:text-3xl text-[#1B1B1B] pt-16 font-medium leading-snug mb-2">
-              Fokus pada konversi — ubah trafik jadi penjualan nyata.
-            </h3>
-            <p class="text-sm sm:text-base md:text-lg text-[#8D8D8D] pt-6 leading-snug">
-              Tingkatkan penjualan dan jangkau lebih banyak klien lewat desain yang optimal dan terarah.
-            </p>
-          </div>
-
-
-          <!-- Card 3 -->
-          <div class="bg-white text-black p-6 sm:p-10 md:p-12 rounded-4xl shadow-lg">
-            <img src="./img/cart.png" alt="Chart" class="w-full mb-4 pt-12 pb-6 rounded-lg" />
-            <h3 class="font-semibold text-[#1B1B1B] mb-2 text-2xl md:text-[35px]">
-              Strategi jangka panjang untuk hasil yang berkelanjutan
-            </h3>
-            <p class="text-base md:text-[17.86px] pb-10 text-[#8D8D8D]">
-              Kami merancang sekaligus mengoptimasi produk untuk terus berkembang.
-            </p>
-          </div>
-
-          <!-- Card 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-2  gap-12">
+        <div class="bg-[#0A0A0A] relative px-6 py-10 md:px-12 md:py-16 rounded-4xl shadow-lg">
           <div
-            class="relative bg-[#3C3C3C] rounded-4xl overflow-hidden shadow-lg group min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
-            <!-- Background Image -->
-            <img src="./img/card2.png" alt="Design Decision"
-              class="w-full h-full object-cover p-4 sm:p-6 duration-300" />
+            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
+          </div>
+          <img src="./img/d1.png" class="mb-12" alt="Industry Image" />
 
-            <!-- Logo -->
-            <img src="./img/d1.png" alt="Logo"
-              class="absolute top-4 left-4 sm:top-8 sm:left-8 w-10 h-10 sm:w-12 sm:h-12 object-contain z-10" />
-
-            <!-- Chat Bubbles -->
-            <img src="./img/chat1.png" alt="Chat 1"
-              class="absolute top-[8rem] left-6 sm:top-[10rem] sm:left-12 z-10 w-16 sm:w-auto" />
-            <img src="./img/chat2.png" alt="Chat 2"
-              class="absolute top-[10rem] left-[8rem] sm:top-[13rem] sm:left-[14rem] z-10 w-16 sm:w-auto" />
-            <img src="./img/chat3.png" alt="Chat 3"
-              class="absolute top-[13rem] left-[5rem] sm:top-[16rem] sm:left-[10rem] z-10 w-16 sm:w-auto" />
-
-            <!-- Dots -->
-            <div class="absolute top-[17rem] right-8 sm:top-[20rem] sm:right-[16rem] z-10">
-              <div class="flex flex-row gap-2">
-                <div class="p-1 bg-[#0055FE] rounded-full"></div>
-                <div class="p-1 bg-[#0055FE] rounded-full"></div>
-                <div class="p-1 bg-[#0055FE] rounded-full"></div>
-              </div>
+          <div class="relative w-full space-y-2 mb-4 overflow-hidden">
+            <div class="flex gap-2 animate-scroll-left w-max min-w-full whitespace-nowrap">
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Media</span>
+              <span
+                class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-commerce</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">SaaS
+                Startups</span>
+              <span
+                class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-learning</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Creator
+                economy</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Sports &
+                Fitness</span>
             </div>
 
-            <!-- Heading -->
-            <h3
-              class="text-lg sm:text-2xl lg:text-4xl absolute bottom-[8rem] sm:bottom-[10rem] left-4 sm:left-[3rem] z-10 leading-snug sm:leading-tight text-white">
-              Setiap Keputusan Desain,<br>
-              <span class="text-[#0055FE]">Ada Alasannya.</span>
-            </h3>
+            <div class="flex gap-2 animate-scroll-left w-max min-w-full whitespace-nowrap"
+              style="animation-delay: 10s;">
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Media</span>
+              <span
+                class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-commerce</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">SaaS
+                Startups</span>
+              <span
+                class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">E-learning</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Creator
+                economy</span>
+              <span class="text-sm sm:text-base border border-white/30 px-6 sm:px-10 py-2 rounded-full">Sports &
+                Fitness</span>
+            </div>
+          </div>
 
-            <!-- Description -->
-            <p
-              class="text-sm sm:text-base md:text-lg text-white/50 pr-4 sm:pr-12 absolute bottom-[3rem] sm:bottom-[5rem] left-4 sm:left-[3rem] z-10 leading-normal">
-              Setiap elemen dirancang dengan tujuan—bukan sekadar estetika, tapi untuk fungsi dan hasil.
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-medium max-w-[28rem] mb-2 mt-20 md:mt-[120px]">
+            Berpengalaman 6 tahun bangun solusi <span class="text-[#0055FE]">lintas industri</span>
+          </h3>
+
+          <p class="text-sm sm:text-base text-white/50 font-light mt-4 md:mt-6 mb-8 md:mb-12">
+            Kami telah menangani 400+ proyek lintas industri, dari perbankan hingga platform LIVE interaktif.
+          </p>
+
+          <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-[radial-gradient(circle_at_center,_rgba(47,78,200,0.3)_0%,_transparent_70%)] pointer-events-none z-10">
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
+          </div>
+        </div>
+
+        <div class="bg-white text-black px-6 sm:px-8 md:px-12 py-10 md:py-12 rounded-3xl shadow-xl mx-auto ">
+          <!-- First Progress -->
+          <div class="mb-8">
+            <div class="flex items-center gap-2 w-full sm:w-[80%]">
+              <div class="relative flex-1 h-[36px] border border-gray-300 bg-gray-100 rounded-sm overflow-hidden">
+                <div class="absolute top-0 left-0 h-full w-full bg-gray-200"></div>
+                <div class="absolute top-0 left-0 h-full bg-black" style="width: 10%"></div>
+              </div>
+              <span class="text-2xl sm:text-3xl md:text-4xl font-semibold w-[50px] text-right">0%</span>
+            </div>
+            <div class="flex items-start justify-between text-[13px] font-medium mb-1">
+              <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Most websites convert poorly</span>
+            </div>
+            <p class="text-sm sm:text-base md:text-lg text-black/40 leading-snug">
+              (bad UI, UX & SEO practices, missed product potential)
             </p>
           </div>
 
+          <!-- Second Progress -->
+          <div class="mb-8">
+            <div class="flex items-center gap-2 w-full sm:w-[90%]">
+              <div class="relative flex-1 h-[36px] rounded-sm">
+                <div class="absolute top-0 left-0 h-full w-full bg-gray-200 rounded-sm"></div>
+                <div
+                  class="absolute top-0 left-0 h-full w-full bg-[#0055FE] rounded-sm shadow-[0_0_20px_1px_#0055FE80]">
+                </div>
+              </div>
 
+              <span class="text-2xl sm:text-3xl md:text-4xl font-semibold text-right">4-8%</span>
+            </div>
+            <div class="flex items-start justify-between text-[13px] font-medium mb-1">
+              <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Squareblack designs for
+                conversion</span>
+            </div>
+            <p class="text-sm sm:text-base md:text-lg text-black/40 leading-snug">
+              (heuristic analysis based + regular optimization)
+            </p>
+          </div>
+
+          <!-- Headline and Description -->
+          <h3 class="text-3xl sm:text-3xl text-[#1B1B1B] pt-16 font-medium leading-snug mb-2">
+            Fokus pada konversi — ubah trafik jadi penjualan nyata.
+          </h3>
+          <p class="text-sm sm:text-base md:text-lg text-[#8D8D8D] pt-6 leading-snug">
+            Tingkatkan penjualan dan jangkau lebih banyak klien lewat desain yang optimal dan terarah.
+          </p>
         </div>
-      </div>
 
+
+        <!-- Card 3 -->
+        <div class="bg-white text-black p-6 sm:p-10 md:p-12 rounded-4xl shadow-lg">
+          <img src="./img/cart.png" alt="Chart" class="w-full mb-4 pt-12 pb-6 rounded-lg" />
+          <h3 class="font-semibold text-[#1B1B1B] mb-2 text-2xl md:text-[35px]">
+            Strategi jangka panjang untuk hasil yang berkelanjutan
+          </h3>
+          <p class="text-base md:text-[17.86px] pb-10 text-[#8D8D8D]">
+            Kami merancang sekaligus mengoptimasi produk untuk terus berkembang.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="relative bg-[#3C3C3C] rounded-4xl overflow-hidden shadow-lg group min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
+          <!-- Background Image -->
+          <img src="./img/card2.png" alt="Design Decision" class="w-full h-full object-cover p-4 sm:p-6 duration-300" />
+
+          <!-- Logo -->
+          <img src="./img/d1.png" alt="Logo"
+            class="absolute top-4 left-4 sm:top-8 sm:left-8 w-10 h-10 sm:w-12 sm:h-12 object-contain z-10" />
+
+          <!-- Chat Bubbles -->
+          <img src="./img/chat1.png" alt="Chat 1"
+            class="absolute top-[8rem] left-6 sm:top-[10rem] sm:left-12 z-10 w-16 sm:w-auto" />
+          <img src="./img/chat2.png" alt="Chat 2"
+            class="absolute top-[10rem] left-[8rem] sm:top-[13rem] sm:left-[14rem] z-10 w-16 sm:w-auto" />
+          <img src="./img/chat3.png" alt="Chat 3"
+            class="absolute top-[13rem] left-[5rem] sm:top-[16rem] sm:left-[10rem] z-10 w-16 sm:w-auto" />
+
+          <!-- Dots -->
+          <div class="absolute top-[17rem] right-8 sm:top-[20rem] sm:right-[16rem] z-10">
+            <div class="flex flex-row gap-2">
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+              <div class="p-1 bg-[#0055FE] rounded-full"></div>
+            </div>
+          </div>
+
+          <!-- Heading -->
+          <h3
+            class="text-lg sm:text-2xl lg:text-4xl absolute bottom-[8rem] sm:bottom-[10rem] left-4 sm:left-[3rem] z-10 leading-snug sm:leading-tight text-white">
+            Setiap Keputusan Desain,<br class="hidden md:block"> 
+            <span class="text-[#0055FE]">Ada Alasannya.</span>
+          </h3>
+
+          <!-- Description -->
+          <p
+            class="text-sm sm:text-base md:text-lg text-white/50 pr-4 sm:pr-12 absolute bottom-[3rem] sm:bottom-[5rem] left-4 sm:left-[3rem] z-10 leading-normal">
+            Setiap elemen dirancang dengan tujuan—bukan sekadar estetika, tapi untuk fungsi dan hasil.
+          </p>
+        </div>
+
+
+      </div>
     </div>
+
   </section>
 
-  <section class="bg-[#010101] text-white  py-12 md:py-20 px-4 md:px-20">
-    <div class="max-w-7xl mx-auto text-center mb-12">
-
+  <section class="bg-[#010101] text-white py-12 md:mx-[6.25rem] mx-2">
+    <div class=" mx-auto text-center mb-12">
       <span
         class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
         Testimonials
         <span
           class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></span>
       </span>
-      <br>
+      <br class="hidden md:block"> 
       <div class="flex items-center justify-center w-full gap-4 py-8">
         <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
         <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
@@ -477,7 +470,7 @@
         <div class="flex-1  h-[4px] bg-gradient-to-r from-[#3C63FF] to-transparent"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
+      <div class="grid md:grid-cols-3 gap-6  md:mx-auto mx-2 items-start">
         <!-- Left Card -->
         <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
           <div class="mb-4">
@@ -492,7 +485,7 @@
               <img src="./img/t1.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Aditya P Manager<br>
+                  Aditya P Manager<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Bank Central Indonesia
                   </span>
@@ -522,7 +515,7 @@
               <img src="./img/t2.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Badrus Shoolehk<br>
+                  Badrus Shoolehk<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Software Architect
                   </span>
@@ -548,7 +541,7 @@
               <img src="./img/t3.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Fathan<br>
+                  Fathan<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Cyclopedia
                   </span>
@@ -576,7 +569,7 @@
               <img src="./img/t4.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Fadli<br>
+                  Fadli<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Santaimoto
                   </span>
@@ -601,7 +594,7 @@
               <img src="./img/t5.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Garry<br>
+                  Garry<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Pentarex
                   </span>
@@ -629,7 +622,7 @@
               <img src="./img/t6.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Handika<br>
+                  Handika<br class="hidden md:block"> 
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Get Done
                   </span>
@@ -642,8 +635,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="mt-12 bg-[#0A0A0A] mx-auto px-6 sm:px-10 md:px-12 py-16 md:py-[9rem] rounded-3xl overflow-hidden relative z-10 max-w-screen-xl">
+      <div class="mt-12 bg-[#0A0A0A] sm:px-10 mx-2 md:mx-auto py-16 md:py-[9rem] rounded-3xl overflow-hidden relative z-10 ">
         <!-- Background Shape -->
         <img src="./img/corak2.svg" alt="Background Shape" class="absolute top-0 left-0 w-40 sm:w-60 md:w-auto">
 
@@ -652,7 +644,7 @@
           Penasaran bagaimana kami bisa<br />
           meningkatkan
           <span class="inline-flex items-center gap-1">
-            <img src="./img/panah.svg" alt="Arrow" class=" w-[3rem] md:w-[6rem]">
+            <img src="./img/panah.svg" alt="Arrow" class=" w-[3rem] md:w-[6.25rem]">
             konversi
           </span><br />
           dan kualitas produk Anda?
@@ -680,7 +672,7 @@
 
   <section class="bg-[#010101] py-12">
     <div class="">
-      <h2 class="text-2xl px-24 md:text-5xl font-semibold text-white mb-8">
+      <h2 class="text-2xl px-24 md:text-5xl font-semibold text-white mb-12">
         My clients <span class="text-blue-500">100+</span>
       </h2>
       <div class="swiper mySwiper">
@@ -728,7 +720,7 @@
     </div>
   </section>
 
-  <section class="bg-[#010101] text-white py-20 px-4 md:px-20">
+  <section class="bg-[#010101] text-white py-20 md:mx-[6.25rem] mx-2">
     <div class="flex justify-center">
       <p
         class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
@@ -739,7 +731,7 @@
       </p>
     </div>
 
-    <br>
+    <br class="hidden md:block"> 
     <div class="flex items-center justify-center w-full gap-4 pb-12">
       <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
       <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
@@ -748,7 +740,7 @@
       <div class="flex-1  h-[4px] bg-gradient-to-r from-[#3C63FF] to-transparent"></div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-8xl mx-auto items-start">
+    <div class="grid md:grid-cols-3 gap-6 md:mx-auto mx-2 items-start">
 
       <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
         <!-- Gradient Line -->
@@ -767,7 +759,7 @@
           <img src="./img/starter.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Essential tools for learners starting their <br> journey
+          Essential tools for learners starting their <br class="hidden md:block">  journey
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 1.000.000</h1>
 
@@ -828,7 +820,7 @@
           <img src="./img/right.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Beginners who are looking for essential resources and support
+          Beginners who are looking for essential <br class="hidden md:block">  resources and support
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 2.500.000</h1>
 
@@ -888,7 +880,7 @@
           <img src="./img/right.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Comprehensive features for experts seeking mastery
+          Comprehensive features for experts seeking <br class="hidden md:block">  mastery
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 25.000.000</h1>
 
@@ -933,10 +925,10 @@
 
 
     </div>
-    <div class="relative py-20 mt-12 mx-0 md:mx-[2.2rem] mt border border-gray-800 md:px-20 overflow-hidden rounded-xl">
+    <div class="relative py-20 mx-2 md:mx-auto mt-12 mt border border-gray-800 md:px-20 overflow-hidden rounded-xl">
       <img src="./img/bg2.png" alt="Background" class="absolute inset-0 w-full h-full object-cover z-0" />
 
-      <div class="max-w-3xl mx-auto text-center relative z-10 text-white">
+      <div class=" mx-auto text-center relative z-10 text-white">
         <!-- Radial Background Glow -->
         <div
           class="absolute top-1 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#3960F9] opacity-[15%] blur-[120px] pointer-events-none z-0">
@@ -952,7 +944,7 @@
           <span class="text-white/90 text-[16px]">Get Started</span>
         </div>
         <h2 class="text-3xl md:text-4xl mt-3 font-semibold leading-snug mb-8">
-          Not sure if it’s the right fit?<br />
+          Not sure if it’s the right fit? <br class="hidden md:block"> 
           Schedule a Call Today!
         </h2>
 
