@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-   
+
 
     // Toggle teks tombol
     if (showMoreBtn.textContent === "Show more") {
@@ -44,3 +44,60 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 8,
+  spaceBetween: 30,
+  loop: true,
+  speed: 4000, // kecepatan geser (besar = lambat)
+  autoplay: {
+    delay: 0, // supaya jalan terus tanpa jeda
+    disableOnInteraction: false,
+  },
+  freeMode: true,
+  freeModeMomentum: false,
+  grabCursor: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    480: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 6,
+    },
+    1024: {
+      slidesPerView: 8,
+    },
+  }
+});
+
+
+
+var swiper2 = new Swiper(".mySwiper2", {
+  slidesPerView: 8,
+  spaceBetween: 30,
+  loop: true,
+  rewind: true,
+  autoplay: {
+    delay: 1000,
+    reverseDirection: true,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 4, // untuk layar <= 480px
+    },
+    480: {
+      slidesPerView: 4,
+    },
+    640: {
+      slidesPerView: 6,
+    },
+    1024: {
+      slidesPerView: 8, // untuk layar >= 1024px
+    },
+  }
+});

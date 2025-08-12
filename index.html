@@ -30,16 +30,32 @@
           <a href="#" class="hover:underline">Pricing</a>
         </nav>
 
-        <!-- BUTTON -->
-        <a href="#"
-          class="inline-flex items-center gap-3 bg-blue-600 text-white px-5 py-2 rounded-lg shadow text-sm font-medium hover:bg-neutral-800 transition">
-          <span class="relative flex h-4 w-4">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
-          </span>
-          Book a quick call
-          <span class="relative z-10 text-xl">→</span>
-        </a>
+     
+
+        <div
+          class="relative px-4 inline-block py-1 rounded-lg border-2 border-white/10  bg-blue-600  shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
+
+          <!-- Button Text -->
+          <div class="flex gap-3 items-center">
+            <span class="relative flex h-4 w-4">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-4 w-4 bg-blue-300"></span>
+            </span>
+            <span class="text-sm"> Book a quick calls</span>
+            <span class="text-xl">→</span>
+          </div>
+        </div>
+
+
       </div>
     </header>
 
@@ -85,9 +101,10 @@
           Amerika, Pakai Jasaku dan Mulai Closing Lewat Websitenya!
         </p>
 
-        <!-- CTA Button -->
-        <!-- <a href="#"
-          class="relative inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 mt-5 rounded-md border border-white/10 bg-[#0055FE] hover:bg-[#005de0] shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-sm font-semibold overflow-hidden transition duration-300 hover:scale-105 z-20">
+
+        <div
+          class="relative px-4 mt-4 inline-block py-2 rounded-lg border-2 border-white/10  bg-blue-600  shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
           <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
             <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
@@ -96,29 +113,20 @@
             <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
             <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
           </div>
-          <span class="relative font-semibold text-base z-10">Get Started</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 relative z-10" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </a> -->
-        <a href="#"
-          class="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-xl shadow text-sm font-medium hover:bg-neutral-800 transition">
-          <span class="relative flex h-8 w-8">
-            <img src="./img/arik.jpg" alt="Michal" class="rounded-full w-[30px] object-cover" />
-            <!-- Status dot -->
-            <span class="absolute top-0 right-0 flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+
+          <!-- Button Text -->
+          <div class="flex gap-3 items-center">
+            <span class="relative flex h-8 w-8">
+              <img src="./img/arik.jpg" alt="Michal" class="rounded-full w-[30px] object-cover" />
+              <span class="absolute top-0 right-0 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-400"></span>
+              </span>
             </span>
-          </span>
-
-          <!-- Text -->
-          <span class="text-lg">Book a call with Ariq</span>
-
-          <!-- Arrow -->
-          <span class="text-xl">→</span>
-        </a>
+            <span class="text-lg">Book a call with Ariq</span>
+            <span class="text-xl">→</span>
+          </div>
+        </div>
 
         <!-- Embedded Video -->
         <div class="mt-12">
@@ -192,7 +200,8 @@
         <img src="img/1.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-8" />
         <div class="max-w-lg">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Saya bangun Cyclopedia agar <br class="hidden md:block">  akses pengetahuan lebih cepat <br class="hidden md:block">  dan
+            Saya bangun Cyclopedia agar <br class="hidden md:block"> akses pengetahuan lebih cepat <br
+              class="hidden md:block"> dan
             sederhana.
           </h3>
           <p class="md:text-lg text-sm font-light text-white/80">Case Study Soon</p>
@@ -203,7 +212,8 @@
           <img src="img/2.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
           <div class="max-w-[21rem]">
             <p class="text-base md:text-[24px] w-full text-white">
-              Dibuat dari nol - UI modern, <br class="hidden md:block">  indah, dan pengalaman dev <br class="hidden md:block">  yang
+              Dibuat dari nol - UI modern, <br class="hidden md:block"> indah, dan pengalaman dev <br
+                class="hidden md:block"> yang
               mulus, semua oleh saya.
             </p>
           </div>
@@ -211,29 +221,87 @@
         <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
     </div>
-    <div class="grid card-ar  md:grid-cols-3 gap-12 md:mx-[6.25rem] mx-2 mt-12 pb-12">
+
+
+
+
+    <div class="relative card-ar md:px-[6rem] px-2 grid grid-cols-1 mt-12  w-full items-stretch gap-20 md:mt-20  md:grid-cols-[1fr_1fr_1fr] md:gap-[25px] auto-rows-[1fr]">
+      <div class=" md:mt-0  flex flex-col flex-grow w-ful">
+        <img src="img/3.png" alt="Project 1" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] min-[1440px]:text-[22px] text-white leading-tight">
+          Sebuah konsep Website perjalanan dengan tampilan bersih, modern,
+          dan intuitif.
+        </p>
+        <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
+      </div>
+      <div class="md:mt-0 flex flex-col flex-grow w-ful card-ar">
+        <img src="img/4.png" alt="Project 2" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] text-white  min-[1440px]:text-[22px] leading-tight">
+          Website SantaiMoto hadir dengan tampilan bersih, cepat, dan mudah digunakan.
+        </p>
+        <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
+      </div>
+      <div class="md:mt-0 flex flex-col flex-grow w-ful card-ar mt-2">
+        <img src="img/5.png" alt="Project 3" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
+        <p class="text-[24px] text-white   max-[1440px]:text-[22px] leading-tight">
+          Keahlian saya menciptakan desain bersih, efisien, dan siap pakai untuk berbagai
+          platform.
+        </p>
+        <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="grid card-ar  md:grid-cols-3 gap-12 md:mx-[6.25rem] mx-2 mt-12 pb-12">
       <div>
         <img src="img/3.png" alt="Project 1" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
-        <p class="text-[24px] text-white leading-tight">
-          Sebuah konsep Website perjalanan <br class="hidden md:block">  dengan tampilan bersih, modern,<br class="hidden md:block">  dan intuitif.
+        <p class="text-[24px] min-[1440px]:text-[22px] text-white leading-tight">
+          Sebuah konsep Website perjalanan
+          <br class="block min-[1440px]:hidden">
+          dengan tampilan bersih, modern,
+          <br class="block min-[1440px]:hidden">
+          dan intuitif.
         </p>
+
         <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
       <div class="md:mt-0 card-ar">
         <img src="img/4.png" alt="Project 2" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
-        <p class="text-[24px] text-white leading-tight">
-          Website SantaiMoto hadir dengan <br class="hidden md:block"> tampilan bersih, cepat, dan mudah <br class="hidden md:block"> digunakan.
+        <p class="text-[24px] text-white  min-[1440px]:text-[22px] leading-tight">
+          Website SantaiMoto hadir dengan <br class="hidden md:block"> tampilan bersih, cepat, dan mudah <br
+            class="hidden md:block"> digunakan.
         </p>
         <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
       <div class="md:mt-0 card-ar mt-2">
         <img src="img/5.png" alt="Project 3" class="md:w-full md:h-full object-cover rounded-lg mb-4" />
-        <p class="text-[24px] text-white leading-tight">
-          Keahlian saya menciptakan desain <br class="hidden md:block">  bersih, efisien, dan siap pakai untuk <br class="hidden md:block">  berbagai platform.
+        <p class="text-[24px] text-white   max-[1440px]:text-[22px] leading-tight">
+          Keahlian saya menciptakan desain <br class="hidden md:block"> bersih, efisien, dan siap pakai untuk berbagai
+          platform.
         </p>
         <p class="text-sm md:text-md text-white/80 mt-2">Case Study Soon</p>
       </div>
-    </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- SECTION 1 -->
     <div
       class="relative mt-12 md:mt-36 margin z-10  card-ar md:mx-[6.25rem] mx-2  grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -241,7 +309,8 @@
         <img src="img/10.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <div class="max-w-3xl">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Saya desain dan kembangkan Skybyte agar <br class="hidden md:block">  modern, cepat, dan terpercaya untuk <br class="hidden md:block">  perusahaan.
+            Saya desain dan kembangkan Skybyte agar <br class="hidden md:block"> modern, cepat, dan terpercaya untuk <br
+              class="hidden md:block"> perusahaan.
           </h3>
           <p class=" text-sm md:text-lg font-light text-white/80">Case Study Soon</p>
         </div>
@@ -256,11 +325,13 @@
       </div>
     </div>
     <!-- SECTION 2 -->
-    <div class="relative mt-12 md:mt-36 card-ar  margin  z-10  md:mx-[6.25rem] mx-2 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    <div
+      class="relative mt-12 md:mt-36 card-ar  margin  z-10  md:mx-[6.25rem] mx-2 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
       <div class="md:col-span-4 order-2 card-ar md:order-1">
         <img src="img/8.png" alt="Preview" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <p class="text-base md:text-[24px] leading-tight text-white">
-          Membuat website belanja Lusttres <br class="hidden md:block">  yang cerdas, menawan, dan mudah <br class="hidden md:block">  digunakan di mana saja.
+          Membuat website belanja Lusttres <br class="hidden md:block"> yang cerdas, menawan, dan mudah <br
+            class="hidden md:block"> digunakan di mana saja.
         </p>
         <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
       </div>
@@ -268,7 +339,8 @@
         <img src="img/9.png" alt="Cyclopedia" class="rounded-xl w-full object-cover shadow-lg mb-6" />
         <div class="max-w-3xl">
           <h3 class="text-xl md:text-4xl leading-snug mb-3">
-            Desain saya untuk SantaiMoto mempermudah <br class="hidden md:block">  pengguna memesan layanan servis motor harian.
+            Desain saya untuk SantaiMoto mempermudah <br class="hidden md:block"> pengguna memesan layanan servis motor
+            harian.
           </h3>
         </div>
         <p class="text-sm md:text-lg text-white/80 mt-4">Case Study Soon</p>
@@ -297,7 +369,7 @@
           <div
             class="absolute top-0 left-0 w-full h-[2px] bg-[linear-gradient(to_right,_#020202_0%,_#020202_30%,_#2F4EC8_50%,_#020202_70%,_#020202_100%)] z-10 opacity-80">
           </div>
-          <img src="./img/d1.png" class="mb-12" alt="Industry Image" />
+          <!-- <img src="./img/d1.png" class="mb-12" alt="Industry Image" /> -->
 
           <div class="relative w-full space-y-2 mb-4 overflow-hidden">
             <div class="flex gap-2 animate-scroll-left w-max min-w-full whitespace-nowrap">
@@ -377,7 +449,7 @@
               <span class="text-2xl sm:text-3xl md:text-4xl font-semibold text-right">4-8%</span>
             </div>
             <div class="flex items-start justify-between text-[13px] font-medium mb-1">
-              <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Squareblack designs for
+              <span class="text-sm sm:text-base md:text-lg mt-2 whitespace-nowrap">Ariq Arvy designs for
                 conversion</span>
             </div>
             <p class="text-sm sm:text-base md:text-lg text-black/40 leading-snug">
@@ -413,8 +485,8 @@
           <img src="./img/card2.png" alt="Design Decision" class="w-full h-full object-cover p-4 sm:p-6 duration-300" />
 
           <!-- Logo -->
-          <img src="./img/d1.png" alt="Logo"
-            class="absolute top-4 left-4 sm:top-8 sm:left-8 w-10 h-10 sm:w-12 sm:h-12 object-contain z-10" />
+          <!-- <img src="./img/d1.png" alt="Logo"
+            class="absolute top-4 left-4 sm:top-8 sm:left-8 w-10 h-10 sm:w-12 sm:h-12 object-contain z-10" /> -->
 
           <!-- Chat Bubbles -->
           <img src="./img/chat1.png" alt="Chat 1"
@@ -425,24 +497,24 @@
             class="absolute top-[13rem] left-[5rem] sm:top-[16rem] sm:left-[10rem] z-10 w-16 sm:w-auto" />
 
           <!-- Dots -->
-          <div class="absolute top-[17rem] right-8 sm:top-[20rem] sm:right-[16rem] z-10">
+          <!-- <div class="absolute top-[17rem] right-8 sm:top-[20rem] sm:right-[16rem] z-10">
             <div class="flex flex-row gap-2">
               <div class="p-1 bg-[#0055FE] rounded-full"></div>
               <div class="p-1 bg-[#0055FE] rounded-full"></div>
               <div class="p-1 bg-[#0055FE] rounded-full"></div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Heading -->
           <h3
-            class="text-lg sm:text-2xl lg:text-4xl absolute bottom-[8rem] sm:bottom-[10rem] left-4 sm:left-[3rem] z-10 leading-snug sm:leading-tight text-white">
-            Setiap Keputusan Desain,<br class="hidden md:block"> 
+            class="text-lg px-2  md:px-0 sm:text-2xl lg:text-4xl absolute bottom-[8rem] sm:bottom-[10rem] left-4 sm:left-[3rem] z-10 leading-snug sm:leading-tight text-white">
+            Setiap Keputusan Desain,<br class="hidden md:block">
             <span class="text-[#0055FE]">Ada Alasannya.</span>
           </h3>
 
           <!-- Description -->
           <p
-            class="text-sm sm:text-base md:text-lg text-white/50 pr-4 sm:pr-12 absolute bottom-[3rem] sm:bottom-[5rem] left-4 sm:left-[3rem] z-10 leading-normal">
+            class="text-sm px-2 md:px-0 sm:text-base md:text-lg text-white/50 pr-4 sm:pr-12 absolute bottom-[3rem] sm:bottom-[5rem] left-4 sm:left-[3rem] z-10 leading-normal">
             Setiap elemen dirancang dengan tujuan—bukan sekadar estetika, tapi untuk fungsi dan hasil.
           </p>
         </div>
@@ -453,15 +525,15 @@
 
   </section>
 
-  <section class="bg-[#010101] text-white py-12 md:mx-[6.25rem] mx-2">
-    <div class=" mx-auto text-center mb-12">
+  <section class="bg-[#010101] text-white md:py-12 py-6 md:mx-[6.25rem] mx-2">
+    <div class=" mx-auto text-center md:mb-12 mb-6">
       <span
         class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
         Testimonials
         <span
           class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60%] h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></span>
       </span>
-      <br class="hidden md:block"> 
+      <br class="hidden md:block">
       <div class="flex items-center justify-center w-full gap-4 py-8">
         <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
         <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
@@ -485,7 +557,7 @@
               <img src="./img/t1.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Aditya P Manager<br class="hidden md:block"> 
+                  Aditya P Manager<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Bank Central Indonesia
                   </span>
@@ -515,7 +587,7 @@
               <img src="./img/t2.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Badrus Shoolehk<br class="hidden md:block"> 
+                  Badrus Shoolehk<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Software Architect
                   </span>
@@ -541,7 +613,7 @@
               <img src="./img/t3.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Fathan<br class="hidden md:block"> 
+                  Fathan<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Cyclopedia
                   </span>
@@ -569,7 +641,7 @@
               <img src="./img/t4.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Fadli<br class="hidden md:block"> 
+                  Fadli<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Santaimoto
                   </span>
@@ -594,7 +666,7 @@
               <img src="./img/t5.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Garry<br class="hidden md:block"> 
+                  Garry<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Pentarex
                   </span>
@@ -622,7 +694,7 @@
               <img src="./img/t6.png" alt="Aditya P" class="w-10 h-10 rounded-full object-cover">
               <div>
                 <p class="text-white text-left">
-                  Handika<br class="hidden md:block"> 
+                  Handika<br class="hidden md:block">
                   <span class="text-sm text-white/40 leading-none mt-1">
                     Founder & CEO Get Done
                   </span>
@@ -635,7 +707,8 @@
           </div>
         </div>
       </div>
-      <div class="mt-12 bg-[#0A0A0A] sm:px-10 mx-2 md:mx-auto py-16 md:py-[9rem] rounded-3xl overflow-hidden relative z-10 ">
+      <div
+        class="mt-12 bg-[#0A0A0A] sm:px-10 mx-2 md:mx-auto py-4 md:py-[9rem] rounded-3xl overflow-hidden relative z-10 ">
         <!-- Background Shape -->
         <img src="./img/corak2.svg" alt="Background Shape" class="absolute top-0 left-0 w-40 sm:w-60 md:w-auto">
 
@@ -650,11 +723,33 @@
           dan kualitas produk Anda?
         </h2>
 
-        <!-- CTA Button -->
-        <a href="#"
-          class="inline-flex items-center mt-8 justify-center gap-2 bg-blue-600 hover:bg-blue-500 transition px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl shadow text-white font-medium">
-          <img src="./img/arik.jpg" alt="Ariq" class="w-6 h-6 rounded-full object-cover"> Book a call with Ariq →
-        </a>
+        <div
+          class="relative px-4 mt-4 inline-block py-2 rounded-lg border-2 border-white/10  bg-blue-600  shadow-[0_0_20px_rgba(0,112,243,0.6)] text-white text-lg font-semibold flex items-center gap-2 overflow-hidden radial-glow hover:scale-105 transition duration-300 z-20">
+          <!-- Floating stars -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="star" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 45%; animation-delay: 0.3s;"></div>
+            <div class="star" style="top: 35%; left: 70%; animation-delay: 0.6s;"></div>
+            <div class="star" style="top: 60%; left: 30%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 75%; left: 80%; animation-delay: 0.4s;"></div>
+            <div class="star" style="top: 90%; left: 50%; animation-delay: 0.5s;"></div>
+          </div>
+
+            <div class="flex gap-3 items-center">
+            <span class="relative flex h-8 w-8">
+              <img src="./img/arik.jpg" alt="Michal" class="rounded-full w-[30px] object-cover" />
+              <span class="absolute top-0 right-0 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-400"></span>
+              </span>
+            </span>
+            <span class="text-lg">Book a call with Ariq</span>
+            <span class="text-xl">→</span>
+          </div>
+
+          
+        </div>
+
 
         <!-- Status & Email -->
         <div class="flex items-center justify-center mt-4 gap-2 text-white">
@@ -670,9 +765,9 @@
 
   </section>
 
-  <section class="bg-[#010101] py-12">
+  <section class="bg-[#010101] md:py-12 py-3">
     <div class="">
-      <h2 class="text-2xl px-24 md:text-5xl font-semibold text-white mb-12">
+      <h2 class="text-3xl md:px-24 px-4 text-start md:text-5xl font-semibold text-white mb-12">
         My clients <span class="text-blue-500">100+</span>
       </h2>
       <div class="swiper mySwiper">
@@ -721,7 +816,7 @@
   </section>
 
   <section class="bg-[#010101] text-white py-20 md:mx-[6.25rem] mx-2">
-    <div class="flex justify-center">
+    <div class="flex justify-center mb-2">
       <p
         class="inline-block px-6 py-2 rounded-full text-white text-base font-medium bg-gray-900 relative overflow-hidden">
         Pricing
@@ -731,7 +826,7 @@
       </p>
     </div>
 
-    <br class="hidden md:block"> 
+    <br class="hidden md:block">
     <div class="flex items-center justify-center w-full gap-4 pb-12">
       <div class="flex-1 h-[4px] bg-gradient-to-r from-transparent to-[#3C63FF]"></div>
       <h2 class="text-lg md:text-4xl text-white whitespace-nowrap">
@@ -739,7 +834,6 @@
       </h2>
       <div class="flex-1  h-[4px] bg-gradient-to-r from-[#3C63FF] to-transparent"></div>
     </div>
-
     <div class="grid md:grid-cols-3 gap-6 md:mx-auto mx-2 items-start">
 
       <div class="relative bg-[#0A0A0A] rounded-2xl border border-white/10 p-6 text-white overflow-hidden">
@@ -759,7 +853,7 @@
           <img src="./img/starter.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Essential tools for learners starting their <br class="hidden md:block">  journey
+          Essential tools for learners starting their <br class="hidden md:block"> journey
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 1.000.000</h1>
 
@@ -820,7 +914,7 @@
           <img src="./img/right.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Beginners who are looking for essential <br class="hidden md:block">  resources and support
+          Beginners who are looking for essential <br class="hidden md:block"> resources and support
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 2.500.000</h1>
 
@@ -880,7 +974,7 @@
           <img src="./img/right.svg" alt="" />
         </h3>
         <p class="text-white text-[16px] pr-3 relative z-20">
-          Comprehensive features for experts seeking <br class="hidden md:block">  mastery
+          Comprehensive features for experts seeking <br class="hidden md:block"> mastery
         </p>
         <h1 class="text-4xl font-bold my-4 relative z-20">Rp 25.000.000</h1>
 
@@ -944,7 +1038,7 @@
           <span class="text-white/90 text-[16px]">Get Started</span>
         </div>
         <h2 class="text-3xl md:text-4xl mt-3 font-semibold leading-snug mb-8">
-          Not sure if it’s the right fit? <br class="hidden md:block"> 
+          Not sure if it’s the right fit? <br class="hidden md:block">
           Schedule a Call Today!
         </h2>
 
@@ -1002,64 +1096,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="script.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 8,
-      spaceBetween: 30,
-      loop: true,
-      speed: 4000, // kecepatan geser (besar = lambat)
-      autoplay: {
-        delay: 0, // supaya jalan terus tanpa jeda
-        disableOnInteraction: false,
-      },
-      freeMode: true,
-      freeModeMomentum: false,
-      grabCursor: true,
-      breakpoints: {
-        0: {
-          slidesPerView: 2,
-        },
-        480: {
-          slidesPerView: 4,
-        },
-        768: {
-          slidesPerView: 6,
-        },
-        1024: {
-          slidesPerView: 8,
-        },
-      }
-    });
-
-
-
-    var swiper2 = new Swiper(".mySwiper2", {
-      slidesPerView: 8,
-      spaceBetween: 30,
-      loop: true,
-      rewind: true,
-      autoplay: {
-        delay: 1000,
-        reverseDirection: true,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 4, // untuk layar <= 480px
-        },
-        480: {
-          slidesPerView: 4,
-        },
-        640: {
-          slidesPerView: 6,
-        },
-        1024: {
-          slidesPerView: 8, // untuk layar >= 1024px
-        },
-      }
-    });
-
-  </script>
 </body>
-
+<!-- ayam geprek -->
 </html>
