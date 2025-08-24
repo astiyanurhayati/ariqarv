@@ -101,3 +101,49 @@ var swiper2 = new Swiper(".mySwiper2", {
     },
   }
 });
+
+
+ const phone = "6282114855270";
+    const message = `Halo saya tertarik untuk booking design sprint & development. 
+Boleh minta detail tentang paket :
+
+- Standard Landing Page
+- Pro Website / App
+- Platinum Website / App 
+
+Terima kasih.`;
+
+    const messageStandar = `Halo saya tertarik untuk booking design sprint & development. 
+Boleh minta detail tentang paket :
+
+- Standard Landing Page`;
+
+    const messagePro= `Halo saya tertarik untuk booking design sprint & development.
+Boleh minta detail tentang paket :
+- Pro website / App`;
+
+    const messagePlatinum = `Halo saya tertarik untuk booking design sprint & development.
+Boleh minta detail tentang paket :
+- Platinum Website / App`;
+
+
+    // Encode pesan biar aman di URL
+    const encodedMessage = encodeURIComponent(message);
+    const encodedStandar = encodeURIComponent(messageStandar);
+    const encodedPlatinum = encodeURIComponent(messagePlatinum);
+    const encoodePro = encodeURIComponent(messagePro);
+
+    // Gabungkan jadi link wa.me
+    const waUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+    const standar = `https://wa.me/${phone}?text=${encodedStandar}`;
+    const platinum = `https://wa.me/${phone}?text=${encodedPlatinum}`;
+    const pro = `https://wa.me/${phone}?text=${encoodePro}`;
+
+    // Set ke href <a>
+    document.querySelectorAll(".waLink").forEach(el => {
+      el.setAttribute("href", waUrl);
+    });
+
+    document.getElementById("standar").setAttribute("href", standar);
+    document.getElementById("platinum").setAttribute("href", platinum);
+    document.getElementById("pro").setAttribute("href", pro);
